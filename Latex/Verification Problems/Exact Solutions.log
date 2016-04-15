@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  12 APR 2016 17:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  14 APR 2016 18:48
 entering extended mode
 **Exact*Solutions.tex
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
-s\Project\Exact Solutions\Exact Solutions.tex"
+s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -444,7 +444,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \dlf=\skip57
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
-s\Project\Exact Solutions\Exact Solutions.aux")
+s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
@@ -490,9 +490,9 @@ LaTeX Info: Redefining \pageref on input line 79.
 LaTeX Info: Redefining \nameref on input line 79.
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
-s\Project\Exact Solutions\Exact Solutions.out")
+s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.out")
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
-s\Project\Exact Solutions\Exact Solutions.out")
+s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.out")
 \@outlinefile=\write3
 
 *geometry* driver: auto-detecting
@@ -554,35 +554,44 @@ Chapter 2.
 
 ]
 Chapter 3.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 [3
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
+Chapter 4.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
+[4
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
-s\Project\Exact Solutions\Exact Solutions.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
+s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
 Package rerunfilecheck Info: File `Exact*Solutions.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 9671 strings out of 493921
- 141583 string characters out of 3147273
- 240773 words of memory out of 3000000
- 12834 multiletter control sequences out of 15000+200000
- 10415 words of font info for 39 fonts, out of 3000000 for 9000
+ 9688 strings out of 493921
+ 142018 string characters out of 3147273
+ 241779 words of memory out of 3000000
+ 12844 multiletter control sequences out of 15000+200000
+ 12114 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  30i,6n,32p,924b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on "Exact Solutions.pdf" (4 pages, 59523 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb>
+Output written on "Exact Solutions.pdf" (5 pages, 110842 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 90 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

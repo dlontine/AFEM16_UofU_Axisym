@@ -89,5 +89,33 @@ This example performs a simple uniaxial stress test on an axisymmetric bar. An e
 
 \chapter{Example 2: Pressure Applied to Simply Supported Circular Plate}
 
+
 \section{Closed form solution}
+The equation for the displacement of the center of the plate is as follows:
+
+\begin{equation}
+\delta=
+\frac{3F(1-\nu^2)D_L^2}{8\pi Eh^3}
+\left(
+\frac{D_S^2}{D_L^2}\left[1+
+\frac{(1-\nu)(D_sS^2-D_L^2)}{2(1+\nu)D^2}\right]
+-\left(1+\ln\frac{D_s}{D_L}\right)\right)
+\end{equation}
+
+Vitmar, F. F., and Pukh, V. P., ``Method of Determining Sheet Glass
+Strength," Zavodskava Laboratoriya, Vol. 29, No. 7, 1963, pp.
+863-867.
+
+
+\chapter{Example 3: Thick walled pressure vessel}
+
+\section{Closed form solution}
+The radial displacement of a thick walled pressure vessel at radius $r$ is:
+\begin{equation}
+u(r)=\frac{1-\nu}{E}
+\frac{(r_i^2p_i-r_o^2p_o)r}{r_o^2-r_i^2}+
+\frac{1+\nu}{E}
+\frac{(p_i-p_o)r_i^2r_o^2}{(r_o^2-r_i^2)r}
+\end{equation}
+
 \end{document}
