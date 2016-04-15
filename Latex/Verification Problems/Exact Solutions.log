@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  14 APR 2016 18:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  14 APR 2016 21:42
 entering extended mode
 **Exact*Solutions.tex
 
@@ -554,32 +554,138 @@ Chapter 2.
 
 ]
 Chapter 3.
+<./BD_3.png, id=59, 710.655pt x 370.38374pt>
+File: ./BD_3.png Graphic file (type png)
+ <use ./BD_3.png>
+Package pdftex.def Info: ./BD_3.png used on input line 94.
+(pdftex.def)             Requested size: 328.82707pt x 171.38457pt.
+
+<./BD_2.png, id=60, 264.23718pt x 198.7425pt>
+File: ./BD_2.png Graphic file (type png)
+ <use ./BD_2.png>
+Package pdftex.def Info: ./BD_2.png used on input line 100.
+(pdftex.def)             Requested size: 328.82707pt x 247.3388pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./BD_1.png, id=61, 578.16pt x 287.57437pt>
+File: ./BD_1.png Graphic file (type png)
+ <use ./BD_1.png>
+Package pdftex.def Info: ./BD_1.png used on input line 106.
+(pdftex.def)             Requested size: 328.82707pt x 163.55489pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./BD_4.png, id=62, 441.90094pt x 369.63094pt>
+File: ./BD_4.png Graphic file (type png)
+ <use ./BD_4.png>
+Package pdftex.def Info: ./BD_4.png used on input line 112.
+(pdftex.def)             Requested size: 328.82707pt x 275.06235pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [3
 
-]
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.138 \chapter
+              {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
+/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
+m/Latex/Verification Problems/BD_3.png>] [4pdfTeX warning (ext4): destination w
+ith the same identifier (name{figure.3.2}) has been already used, duplicate ign
+ored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.138 \chapter
+              {Example 3: Thick/thin walled pressure vessel}pdfTeX warning (ext
+4): destination with the same identifier (name{figure.3.3}) has been already us
+ed, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.138 \chapter
+              {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
+/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
+m/Latex/Verification Problems/BD_2.png> <C:/Users/dlontine/Dropbox/(01) School/
+UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Verification 
+Problems/BD_1.png>] [5pdfTeX warning (ext4): destination with the same identifi
+er (name{figure.3.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.138 \chapter
+              {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
+/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
+m/Latex/Verification Problems/BD_4.png>]
 Chapter 4.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
-[4
+[6
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
+Chapter 5.
+<./PV_1.png, id=91, 432.86719pt x 292.84406pt>
+File: ./PV_1.png Graphic file (type png)
+ <use ./PV_1.png>
+Package pdftex.def Info: ./PV_1.png used on input line 152.
+(pdftex.def)             Requested size: 328.82707pt x 222.46996pt.
+ [7
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.157 \chapter
+              {Belleville Washer} <C:/Users/dlontine/Dropbox/(01) School/UofU (
+Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Verification Proble
+ms/PV_1.png>]
+Chapter 6.
+<./Belleville.png, id=97, 420.06938pt x 191.9672pt>
+File: ./Belleville.png Graphic file (type png)
+ <use ./Belleville.png>
+Package pdftex.def Info: ./Belleville.png used on input line 162.
+(pdftex.def)             Requested size: 328.82707pt x 150.26984pt.
+
+[8
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.168 \chapter
+              {Method of manufactured solutions} <C:/Users/dlontine/Dropbox/(01
+) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Veri
+fication Problems/Belleville.png>]
+Chapter 7.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+[9
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
 s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
 Package rerunfilecheck Info: File `Exact*Solutions.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
  ) 
 Here is how much of TeX's memory you used:
- 9688 strings out of 493921
- 142018 string characters out of 3147273
- 241779 words of memory out of 3000000
- 12844 multiletter control sequences out of 15000+200000
+ 9746 strings out of 493921
+ 142720 string characters out of 3147273
+ 242938 words of memory out of 3000000
+ 12881 multiletter control sequences out of 15000+200000
  12114 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 30i,6n,32p,924b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,7n,32p,924b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
@@ -589,9 +695,9 @@ nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb>
-Output written on "Exact Solutions.pdf" (5 pages, 110842 bytes).
+Output written on "Exact Solutions.pdf" (10 pages, 368867 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

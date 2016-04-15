@@ -89,8 +89,36 @@ This example performs a simple uniaxial stress test on an axisymmetric bar. An e
 
 \chapter{Example 2: Pressure Applied to Simply Supported Circular Plate}
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\linewidth]{./BD_3}
+\caption{}
+\label{fig:BD_3}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\linewidth]{./BD_2}
+\caption{}
+\label{fig:BD_2}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\linewidth]{./BD_1}
+\caption{}
+\label{fig:BD_1}
+\end{figure}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\linewidth]{./BD_4}
+\caption{}
+\label{fig:BD_4}
+\end{figure}
+
 
 \section{Closed form solution}
+
+See Ansys Verification Problems p55
+
 The equation for the displacement of the center of the plate is as follows:
 
 \begin{equation}
@@ -107,8 +135,8 @@ Strength," Zavodskava Laboratoriya, Vol. 29, No. 7, 1963, pp.
 863-867.
 
 
-\chapter{Example 3: Thick walled pressure vessel}
-
+\chapter{Example 3: Thick/thin walled pressure vessel}
+Abaqus verification 1.3.4
 \section{Closed form solution}
 The radial displacement of a thick walled pressure vessel at radius $r$ is:
 \begin{equation}
@@ -117,5 +145,27 @@ u(r)=\frac{1-\nu}{E}
 \frac{1+\nu}{E}
 \frac{(p_i-p_o)r_i^2r_o^2}{(r_o^2-r_i^2)r}
 \end{equation}
+
+\chapter{Pressure vessel with hemispherical end-cap}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\linewidth]{./PV_1}
+\caption{}
+\label{fig:PV_1}
+\end{figure}
+
+\chapter{Belleville Washer}
+
+See Ansys Verification Problems p73.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.7\linewidth]{./Belleville}
+\caption{}
+\label{fig:Belleville}
+\end{figure}
+
+
+\chapter{Method of manufactured solutions}
+
 
 \end{document}
