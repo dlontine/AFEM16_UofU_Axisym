@@ -15,3 +15,5 @@ class AxiSymQuad4(BaseElement):
         B[1, 1::2] = B[3, 0::2] = dN[1, :]
 		#B[2, 0::2] = Ne[:]/r #This is what I think we need to do to modify???? r needs to be re-defined
         return B
+		
+		#hahahaha
