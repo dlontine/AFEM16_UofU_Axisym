@@ -89,6 +89,8 @@ This example performs a simple uniaxial stress test on an axisymmetric bar. An e
 
 \chapter{Example 2: Pressure Applied to Simply Supported Circular Plate}
 
+http://www.roymech.co.uk/Useful_Tables/Mechanics/Plates.html
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\linewidth]{./BD_3}
@@ -166,6 +168,28 @@ See Ansys Verification Problems p73.
 
 
 \chapter{Method of manufactured solutions}
+
+\chapter{How do we construct the elements}
+we need to fix the pyfem2 element in a couple of places.
+\begin{itemize}
+\item Fix the B matrix so that we have the r term and shape function in the 3rd row of the B matrix. (Like we did in Homework 7)
+\item Fix the integrand of the K stiffness to include the r term $B^TEBrJ_\omega$
+\item Similarly fix the F term in the forcing function portion of the code.
+\end{itemize}
+
+The types of elements that we're going to focus on in this project is the reduced integration.
+
+Secondary to those, we can optionally figure out the full integration. 
+
+Listed out the order of attack for the elements we develop could be:
+\begin{itemize}
+\item Full integration (maybe easiest to implement)
+\item Reduced integration (down to one gauss point)
+\item Selectively reduced integration ????
+\item Reduced integration with hourglass control ???
+\end{itemize}
+
+The key for our project is to get the testing framework up and running for several types of loading conditions and provide something for elements to be tested against. This testing framework is the most likely thing that Fuller will re-use in pyfem2. That's most likely what he wants.
 
 
 \end{document}

@@ -10,6 +10,8 @@ def test_1():
 	# See schematic in documentation (XXXX) for more information.
 	
 	#Construct the FEM solution
+	#Mesh
+	#
 	#Construct the exact solution
 	#Compare the solutions (export solution comparison as png)
 	#Assert a tolerable error to pass/fail test

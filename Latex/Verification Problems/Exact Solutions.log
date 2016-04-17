@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  14 APR 2016 21:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  16 APR 2016 20:48
 entering extended mode
 **Exact*Solutions.tex
 
@@ -554,34 +554,50 @@ Chapter 2.
 
 ]
 Chapter 3.
-<./BD_3.png, id=59, 710.655pt x 370.38374pt>
+! Missing $ inserted.
+<inserted text> 
+                $
+l.92 http://www.roymech.co.uk/Useful_
+                                     Tables/Mechanics/Plates.html
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.93 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+<./BD_3.png, id=63, 710.655pt x 370.38374pt>
 File: ./BD_3.png Graphic file (type png)
  <use ./BD_3.png>
-Package pdftex.def Info: ./BD_3.png used on input line 94.
+Package pdftex.def Info: ./BD_3.png used on input line 96.
 (pdftex.def)             Requested size: 328.82707pt x 171.38457pt.
 
-<./BD_2.png, id=60, 264.23718pt x 198.7425pt>
+<./BD_2.png, id=64, 264.23718pt x 198.7425pt>
 File: ./BD_2.png Graphic file (type png)
  <use ./BD_2.png>
-Package pdftex.def Info: ./BD_2.png used on input line 100.
+Package pdftex.def Info: ./BD_2.png used on input line 102.
 (pdftex.def)             Requested size: 328.82707pt x 247.3388pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./BD_1.png, id=61, 578.16pt x 287.57437pt>
+<./BD_1.png, id=65, 578.16pt x 287.57437pt>
 File: ./BD_1.png Graphic file (type png)
  <use ./BD_1.png>
-Package pdftex.def Info: ./BD_1.png used on input line 106.
+Package pdftex.def Info: ./BD_1.png used on input line 108.
 (pdftex.def)             Requested size: 328.82707pt x 163.55489pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./BD_4.png, id=62, 441.90094pt x 369.63094pt>
+<./BD_4.png, id=66, 441.90094pt x 369.63094pt>
 File: ./BD_4.png Graphic file (type png)
  <use ./BD_4.png>
-Package pdftex.def Info: ./BD_4.png used on input line 112.
+Package pdftex.def Info: ./BD_4.png used on input line 114.
 (pdftex.def)             Requested size: 328.82707pt x 275.06235pt.
 
 
@@ -594,7 +610,7 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.138 \chapter
+l.140 \chapter
               {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
 /Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
 m/Latex/Verification Problems/BD_3.png>] [4pdfTeX warning (ext4): destination w
@@ -603,14 +619,14 @@ ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.138 \chapter
+l.140 \chapter
               {Example 3: Thick/thin walled pressure vessel}pdfTeX warning (ext
 4): destination with the same identifier (name{figure.3.3}) has been already us
 ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.138 \chapter
+l.140 \chapter
               {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
 /Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
 m/Latex/Verification Problems/BD_2.png> <C:/Users/dlontine/Dropbox/(01) School/
@@ -620,7 +636,7 @@ er (name{figure.3.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.138 \chapter
+l.140 \chapter
               {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
 /Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
 m/Latex/Verification Problems/BD_4.png>]
@@ -629,10 +645,10 @@ Chapter 4.
 
 ]
 Chapter 5.
-<./PV_1.png, id=91, 432.86719pt x 292.84406pt>
+<./PV_1.png, id=95, 432.86719pt x 292.84406pt>
 File: ./PV_1.png Graphic file (type png)
  <use ./PV_1.png>
-Package pdftex.def Info: ./PV_1.png used on input line 152.
+Package pdftex.def Info: ./PV_1.png used on input line 154.
 (pdftex.def)             Requested size: 328.82707pt x 222.46996pt.
  [7
 
@@ -641,15 +657,15 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.157 \chapter
+l.159 \chapter
               {Belleville Washer} <C:/Users/dlontine/Dropbox/(01) School/UofU (
 Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Verification Proble
 ms/PV_1.png>]
 Chapter 6.
-<./Belleville.png, id=97, 420.06938pt x 191.9672pt>
+<./Belleville.png, id=101, 420.06938pt x 191.9672pt>
 File: ./Belleville.png Graphic file (type png)
  <use ./Belleville.png>
-Package pdftex.def Info: ./Belleville.png used on input line 162.
+Package pdftex.def Info: ./Belleville.png used on input line 164.
 (pdftex.def)             Requested size: 328.82707pt x 150.26984pt.
 
 [8
@@ -659,30 +675,41 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.168 \chapter
+l.170 \chapter
               {Method of manufactured solutions} <C:/Users/dlontine/Dropbox/(01
 ) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Veri
 fication Problems/Belleville.png>]
 Chapter 7.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
 [9
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+Chapter 8.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+ [10
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
 s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `Exact*Solutions.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 9746 strings out of 493921
- 142720 string characters out of 3147273
+ 9771 strings out of 493921
+ 143100 string characters out of 3147273
  242938 words of memory out of 3000000
- 12881 multiletter control sequences out of 15000+200000
+ 12901 multiletter control sequences out of 15000+200000
  12114 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  30i,7n,32p,924b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -695,9 +722,9 @@ nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb>
-Output written on "Exact Solutions.pdf" (10 pages, 368867 bytes).
+Output written on "Exact Solutions.pdf" (11 pages, 377717 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 152 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
