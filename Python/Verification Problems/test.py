@@ -19,8 +19,8 @@ def test_1():
 	E = 1e6
 	v = 0.3
 	
-	r = 2.0 	# Radius of plate
-	t = 0.1 	# Thickness of plate
+	r = 23/2.0 	# Radius of plate
+	t = 0.4 	# Thickness of plate
 	p = 1000 	# Pressure applied to the plate
 	
 	####-----FEM-----####
@@ -53,8 +53,8 @@ def test_2():
 	E = 1e6
 	v = 0.3
 	
-	r = 2.0 	# Radius of plate
-	t = 0.1 	# Thickness of plate
+	r = 23/2.0 	# Radius of plate
+	t = 0.4 	# Thickness of plate
 	p = 1000 	# Pressure applied to the plate
 	
 	####-----FEM-----####
@@ -95,7 +95,7 @@ def test_3():
 	
 	####-----FEM-----####
 	#Construct the FEM solution
-	#Mesh
+	#Mesh- ABAQUS GENERATED
 	#Loading Conditions
 	#Evaluation of key solution point
 	
@@ -113,7 +113,7 @@ def test_3():
 	assert np.allclose(zFEM,zmax,atol=1e-10)
 
 def test_4():
-    # TEST CASE 4
+    # TEST CASE 4 ***********
 	# Geometry: Flat circular plate with no holes
 	# Supports: Cantilever or clamped edges at radius r
 	# Loads: 	Point load at center of the plate
@@ -126,8 +126,8 @@ def test_4():
 	E = 1e6
 	v = 0.3
 	
-	R = 2.0 	# Radius of plate
-	t = 0.1 	# Thickness of plate
+	R = 23/2.0 	# Radius of plate
+	t = 0.4 	# Thickness of plate
 	p = 1000 	# Pressure applied to the plate
 	
 	####-----FEM-----####
@@ -145,6 +145,45 @@ def test_4():
 	uz = -P/(16*pi*D)*((3+v)/(1+v)*(R**2-r**2)+2*r**2*log(r/R))
 	# Solution for the maximum deflection in z ***Special Case***
 	zmax = -P/(16*pi*D)*((3+v)/(1+v)*R**2)
+	
+	#Compare the solutions
+	#Assert a tolerable error to pass/fail test
+	assert np.allclose(zFEM,zmax,atol=1e-10)
+	
+def test_5():
+    # TEST CASE 4: WITH HOLE
+	# Geometry: Flat circular plate with no holes
+	# Supports: Cantilever or clamped edges at radius r
+	# Loads: 	Point load at center of the plate
+	#
+	# Objective of test: 
+	# Verify that element in development produces appropriate maximum deflection at the center of the plate. 
+	# See schematic in documentation (XXXX) for more information.
+    
+	#### Problem Setup ####
+	E = 1e6
+	v = 0.3
+	
+	R = 23/2.0 	# Radius of plate
+	Ri= 3		# Inside radius (HOLE)
+	t = 0.4 	# Thickness of plate
+	p = 1000 	# Pressure applied to the plate
+	
+	####-----FEM-----####
+	#Construct the FEM solution
+	#Mesh
+	#Loading Conditions
+	#Evaluation of key solution point
+	
+	zFEM = 0.0001
+	
+	####-----Exact-----####
+	# Solution of the deflection in z as a function of radius r
+	# Solution of the deflection in r as a function of radius r
+	#ur = P/(8*pi*D)*((3+v)/(1+v)-1-2*log(r/R))*r*z
+	#uz = -P/(16*pi*D)*((3+v)/(1+v)*(R**2-r**2)+2*r**2*log(r/R))
+	# Solution for the maximum deflection in z ***Special Case***
+	#zmax = -P/(16*pi*D)*((3+v)/(1+v)*R**2)
 	
 	#Compare the solutions
 	#Assert a tolerable error to pass/fail test
