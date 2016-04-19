@@ -151,7 +151,7 @@ def test_4():
 	assert np.allclose(zFEM,zmax,atol=1e-10)
 	
 def test_5():
-    # TEST CASE 4: WITH HOLE
+    # TEST CASE 5: WITH HOLE
 	# Geometry: Flat circular plate with no holes
 	# Supports: Cantilever or clamped edges at radius r
 	# Loads: 	Point load at center of the plate
