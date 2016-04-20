@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  19 APR 2016 19:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  20 APR 2016 12:50
 entering extended mode
 **Status_Report.tex
 
@@ -254,22 +254,21 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
 s\AFEM16_UofU_Axisym\Latex\Status Report\Status_Report.aux") ) 
 Here is how much of TeX's memory you used:
- 2581 strings out of 493921
- 33807 string characters out of 3147273
- 91823 words of memory out of 3000000
- 5858 multiletter control sequences out of 15000+200000
- 8931 words of font info for 34 fonts, out of 3000000 for 9000
+ 2579 strings out of 493921
+ 33786 string characters out of 3147273
+ 91820 words of memory out of 3000000
+ 5857 multiletter control sequences out of 15000+200000
+ 8584 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,6n,24p,300b,222s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,24p,300b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmti12.pfb>
-Output written on Status_Report.pdf (2 pages, 58506 bytes).
+lic/amsfonts/cm/cmsy10.pfb>
+Output written on Status_Report.pdf (2 pages, 49814 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 25 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
