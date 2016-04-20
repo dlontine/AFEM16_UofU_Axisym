@@ -1,7 +1,7 @@
 from numpy import *
 from .isop2_4 import CSDIsoParametricQuad4 as BaseElement
 # --------------------------------------------------------------------------- #
-# --------------------- BILINEAR PLANE STRAIN ELEMENT ----------------------- #
+# --------- Axisymmetric Reduced Integration With Hourglass Element --------- #
 # --------------------------------------------------------------------------- #
 class AxiSymmetricQuad4Reduced(BaseElement):
     ndir = 3

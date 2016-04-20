@@ -1,7 +1,7 @@
 from numpy import *
 from .isop2_4 import CSDIsoParametricQuad4 as BaseElement
 # --------------------------------------------------------------------------- #
-# --------------------- BILINEAR PLANE STRAIN ELEMENT ----------------------- #
+# ----------------------- Axisymmetric Quad Element ------------------------- #
 # --------------------------------------------------------------------------- #
 class AxiSymmetricQuad4(BaseElement):
     ndir = 3
