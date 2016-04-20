@@ -4,7 +4,6 @@ import subprocess
 
 #This code utilizes the testing framework within python to run verification tests on the FEM solver that we have developed.
 
-
 def test_1():
     # TEST CASE 1
     # Geometry: Flat circular plate with no holes
@@ -34,11 +33,13 @@ def test_1():
     ####-----Exact-----####
     D = E*t**3/(12*(1-v**2)) #Flexural rigidity
     zmax=(5+v)*p*r**4/(64*(1+v)*D)
+	
+	
     print(zmax)
     print(zFEM)
     #Compare the solutions
     #Assert a tolerable error to pass/fail test
-    #assert np.allclose(zFEM,zmax,atol=1e-5)
+    assert np.allclose(zFEM,zmax,atol=1e-5)
 
 
 def test_2():
