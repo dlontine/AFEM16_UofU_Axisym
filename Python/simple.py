@@ -16,7 +16,7 @@ def AxisymmetricRing():
     mat.Elastic(E=30e6, Nu=.3)
 
     V.ElementBlock('EALL', (1,))
-    V.AssignProperties('EALL', AxiSymmetricQuad4SelectiveReduced, mat, formulation=1)
+    V.AssignProperties('EALL', AxiSymmetricQuad4Reduced, mat, formulation=1)
     V.PrescribedBC(1, Zr)
     V.PrescribedBC(2, Zr)
 
