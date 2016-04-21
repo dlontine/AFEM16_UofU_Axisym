@@ -83,9 +83,17 @@
 \chapter{Analytical Formulation}
 
 \chapter{Computational Implementation}
-The axisymmetric elements we produced are fundamentally quite simple. They modify the basic quad element found in pyfem2. This 
-\section{Full integration}
+The axisymmetric elements produced are fundamentally quite simple. They modify the basic quad element found in pyfem2. They were developed and tested using the latest version of pyfem2 as given in update \hyperlink{https://github.com/tjfulle/pyfem2/commit/bea5af7b7dc98cb5529406c07bc4a8b18ae5e584}{bea5af7} (4/19/2016).
 
+Each of these elements has several things in common. Each of these elements modifies the $[\pmb{B}]$ matrix so that the third row (B[2,0::2]) includes the shape functions divided by the radius from the axis of symmetry.
+
+Additionally, each of these elements has a group of ``formulation setting" functions to access the different modifications to the stiffness matrix as defined in chapter 2 in the Galerkin and Petrov-Galerkin formulations of axisymmetry. 
+\section{Full integration}
+The full integration element was not developed by the authors, however, it is used heavily in the verification problems. This element is the base element and other elements such as the selective reduced and reduced integration elements are only slight modifications of this the base element.
+
+The full integration element applies gauss points at $(x,y)=(\pm\sqrt{\frac{1}{3}},\pm\sqrt{\frac{1}{3}})$ inside the element. This is applying 2 gauss points for each dimension. The gauss weight for each of the gauss points is equal to 1.
+
+As will be discussed in great detail, this element can exhibit problems such as shear and volume locking in different scenarios.
 \begin{lstlisting}[language=python]
 from numpy import *
 from .isop2_4 import CSDIsoParametricQuad4 as BaseElement
@@ -190,7 +198,7 @@ class AxiSymmetricQuad4Reduced(BaseElement):
 \end{lstlisting}
 
 \section{Implementation}
-The following listing is required for \_\_init\_\_.py in order for the elements above to be implemented into pyfem2.
+The following listing is required for \_\_init\_\_.py in order for the elements above to be implemented into pyfem2. Note that the primary changes to the previously generated pyfem2 in the commit mentioned above is found in lines 4,5,22,23. The AxisymmetricQuad4 element was implemented in pyfem2 without any contribution of the authors.
 \begin{lstlisting}[language=Python]
 __all__ = ['PlaneStrainTria3', 'PlaneStressTria3',
            'PlaneStrainQuad4BBar', 'PlaneStrainQuad4', 'PlaneStrainQuad4Reduced',
