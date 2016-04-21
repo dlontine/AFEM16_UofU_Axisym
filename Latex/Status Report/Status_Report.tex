@@ -1,15 +1,30 @@
-\documentclass[10pt,letterpaper]{report}
-\usepackage[latin1]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
+\documentclass{article}
 \usepackage[left=1.00in, right=1.00in, top=1.00in, bottom=1.00in]{geometry}
-\author{Derek Lontine, Stuart Childs, Alex Bailey}
-\title{AFEM Project: Axisymmetry}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Alex Bailey\\ Stuart Childs\\ Derek Lontine}
+\rhead{AFEM Project}
+\chead{ME 7540}
+\rfoot{Page \thepage}
+
+
+
+
+
+
+
+
 \begin{document}
-\maketitle
-Our project is progressing well. We have been successful in creating and implementing axisymmetric elements (thanks to your help). We are currently in the process of determining if our implementation of the elements is correct. 
+%\maketitle
+\vspace{0.2in}
+\huge{Progress Report}\normalsize
+\vspace{0.2in}
+
+Our project is progressing well. We have been successful in creating and implementing axisymmetric elements (thanks to your help) in pyfem2. We are currently in the process of determining if our implementation of the elements is correct. We have begun constructing code for verification tests and implementing them into pyfem2. 
 
 In the project assignment details, it is outlined that a project must complete two of the three following items:
 \begin{enumerate}
@@ -19,18 +34,30 @@ In the project assignment details, it is outlined that a project must complete t
 \end{enumerate} 
 In keeping with these items, we've determined that we would like to focus on the computational implementation and the analytical formulation. 
 
-In addition to this, we are exerting a great deal of effort toward the verification and error analysis portion of the project. We feel that this portion of our project is most likely to produce re-usable results. We hope that the tests we create will help future developers in their development of axisymmetric elements in pyfem2.
+In addition to these portions of the project, we are exerting a great deal of effort toward the verification and error analysis portion of the project. We feel that this part of our project is most likely to produce re-usable results. We hope that the tests we create will help future developers in their development of axisymmetric elements in pyfem2.
 
-Therefore, we have determined that the following outline captures what we aim to accomplish (or what has already been accomplished) in the project.
+The following is an outline of our final report. This summary captures what we aim to accomplish (or what has already been accomplished) by our work on this project.
 
+\vspace{0.2in}
 \bf{Outline:}\normalfont
 \begin{itemize}
 \item{Introduction}
-\item{Progress on element implementation}
-\subitem{Full integration element}
-\subitem{Reduced integration with hourglass control}
-\subitem{Selectively reduced integration}
-\item{Brief description of verification problems we hope to verify against}
-\item{How to evaluate each element type}
+\item{Analytical formulation}
+\subitem{Petrov-Galerkin (Santos) formulation}
+\subitem{Galerkin (Fellipa) formulation}
+\item{Computational implementation}
+\subitem{CSDAX4F- Four node, full integration element}
+\subitem{CSDAX4R- Four node, reduced integration with hourglass control}
+\subitem{CSDAX4S- Four node, selectively reduced integration}
+\item{Verification problems}
+\subitem{Circular plate bending}
+\subitem{Thick walled pressure vessels}
+\subitem{Axially loaded bar (compression/tension test)}
+\subitem{Belleville washer}
+\item{Computational implementation of verification tests}
+\subitem{Testing framework with Python's \it{unittest}}
+\subitem{Test against verification problems under varying poisson's ratio and young's moduli}
+\item{Error analysis \& element performance}
+\subitem{Detailed report of the performance of each element with respect to different potential operating conditions in the verification tests}
 \end{itemize}
 \end{document}
