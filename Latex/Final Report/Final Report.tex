@@ -82,6 +82,26 @@
 
 \chapter{Analytical Formulation}
 
+The finite element formulation
+
+Fellipa
+\begin{equation}
+\pmb{K}^e=\sum_{k=1}^p \sum_{l=1}^p w_k w_i \pmb{B}^T \pmb{E} \pmb{B} r J_\Omega
+\end{equation}
+
+\begin{equation}
+\pmb{f}=\int_{\Omega^e} r \pmb{N}^T \pmb{b} d\Omega +\int_{\Gamma^e} r \pmb{N}^T \pmb{\hat{t}} d\Gamma
+\end{equation}
+
+Santos:
+\begin{equation}
+[\pmb{K}^e]=\underbrace{\int_{\Omega} [\pmb{B}]^T [\pmb{D}] [\pmb{B}] dA}_{Plane Strain} -\int_r \frac{1}{r} (\sigma_{33} \delta_{1i}-\sigma_{i 1}) w_i dr
+\end{equation}
+
+\begin{equation}
+\{\pmb{f}\}=\int_{A^e} \rho \{ \pmb{b}\} [\pmb{P}] dA + \int_S \{\pmb{t}\} [\pmb{P}] ds
+\end{equation}
+
 \chapter{Computational Implementation}
 The axisymmetric elements produced are fundamentally quite simple. They modify the basic quad element found in pyfem2. They were developed and tested using the latest version of pyfem2 as given in update \hyperlink{https://github.com/tjfulle/pyfem2/commit/bea5af7b7dc98cb5529406c07bc4a8b18ae5e584}{bea5af7} (4/19/2016).
 
@@ -234,7 +254,7 @@ from .CSDQ8ER import PlaneStrainQuad8Reduced
 from .CSDQ8SF import PlaneStressQuad8
 \end{lstlisting}
 
-
+\section{Aba Meshing}
 
 
 
