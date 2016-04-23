@@ -14,15 +14,15 @@ import sys
 sys.path.insert(0, '../')
 from pyfem2 import *
 
-mesh = RectilinearMesh2D(nx=20, ny=4, lx=11.5, ly=0.4)
+mesh = RectilinearMesh2D(nx=5, ny=2, lx=11.5, ly=0.4)
 mat = Material('Material-1', elastic={'E':1e6, 'Nu':0.2})
 
 V = FiniteElementModel(mesh=mesh, jobid='QuadPlate')
 V.ElementBlock('ElementBlock1', ALL)
-V.AssignProperties('ElementBlock1', AxiSymmetricQuad4Reduced, mat)
+V.AssignProperties('ElementBlock1', AxiSymmetricQuad4, mat)
 
 step = V.StaticStep()
-step.FixDOF(IHI)
+step.PinNodes(6)
 step = V.StaticStep()
 step.ConcentratedLoad(ILO, Y, -100)
 step.run()
