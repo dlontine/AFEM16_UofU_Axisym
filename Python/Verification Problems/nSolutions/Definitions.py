@@ -19,7 +19,16 @@ def get_max_disp(V):
         if uy_max < aym:
             uy_max=aym
             uy_max2=ym
-    return(uy_max2)
+    return uy_max2
+
+def get_disp_pos(GP,V):
+    Xi=array(V.mesh.coord)
+    ui=array(V.steps.last.dofs.reshape(Xi.shape))
+    ux = ui[GP,0]
+    uy = ui[GP,1]
+    X  = Xi[GP,0]
+    Y  = Xi[GP,1]
+    return ux,uy,X,Y
 
 def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if eletyp is None:
