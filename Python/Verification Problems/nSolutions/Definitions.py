@@ -5,8 +5,21 @@ Created on Sat Apr 23 13:22:45 2016
 @author: dlontine
 """
 import sys
+import pdb
 sys.path.insert(0, '../')
 from pyfem2 import *
+
+def get_max_disp(V):
+    uy_max=0
+    uy_max2=0
+    Xi=array(V.mesh.coord)
+    ui=array(V.steps.last.dofs.reshape(Xi.shape))
+    for ym in ui[:,1]:
+        aym=abs(ym)
+        if uy_max < aym:
+            uy_max=aym
+            uy_max2=ym
+    return(uy_max2)
 
 def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if eletyp is None:
@@ -33,6 +46,9 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    #F=File('PlatePointPinned.exo')
+    ym=get_max_disp(V)
+    return V,ym
 
 def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if eletyp is None:
@@ -272,7 +288,10 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
 
 
 #E,v,P,OD,h,NinX=None,NinY=None,eletyp=None
-Plate_Point_Pinned(1e6,.2,100,23,.4)
+V,ym=Plate_Point_Pinned(1e6,.2,100,23,.4)
+print(ym)
+a=array(V.mesh.coord)
+b=array(V.steps.last.dofs.reshape(a.shape))
 Plate_Point_Clamped(1e6,.2,100,23,.4)
 Plate_Pressure_Pinned(1e6,.2,100,23,.4)
 Plate_Pressure_Clamped(1e6,.2,100,23,.4)
