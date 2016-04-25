@@ -304,18 +304,18 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
 
 
 #E,v,P,OD,h,NinX=None,NinY=None,eletyp=None
-V=Plate_Point_Pinned(1e6,.2,1000,23,.4)
-uy_max=get_max_disp(V)
-nnodes=V.numnod
-data1 =array(zeros((nnodes,4)))
-for ii in range(0,nnodes):
-    data1[ii,:]=get_disp_pos(ii,V)
-
-V=Plate_Point_Clamped(1e6,.2,1000,23,.4)
-V=Plate_Pressure_Pinned(1e6,.2,100,23,.4)
-V=Plate_Pressure_Clamped(1e6,.2,100,23,.4)
-V=Washer_Point_Pinned(1e6,.2,100,23,.4)
-V=Washer_Point_Clamped(1e6,.2,100,23,.4)
-V=Washer_Pressure_Pinned(1e6,.2,100,23,.4)
-V=Washer_Pressure_Clamped(1e6,.2,100,23,.4)
-V=Thick_Infinite_Cyl(1e6,.2,100,23,10)
+#V=Plate_Point_Pinned(1e6,.2,1000,23,.4)
+#uy_max=get_max_disp(V)
+#nnodes=V.numnod
+#data1 =array(zeros((nnodes,4)))
+#for ii in range(0,nnodes):
+#    data1[ii,:]=get_disp_pos(ii,V)
+#
+#V=Plate_Point_Clamped(1e6,.2,1000,23,.4)
+#V=Plate_Pressure_Pinned(1e6,.2,100,23,.4)
+#V=Plate_Pressure_Clamped(1e6,.2,100,23,.4)
+#V=Washer_Point_Pinned(1e6,.2,100,23,.4)
+#V=Washer_Point_Clamped(1e6,.2,100,23,.4)
+#V=Washer_Pressure_Pinned(1e6,.2,100,23,.4)
+#V=Washer_Pressure_Clamped(1e6,.2,100,23,.4)
+#V=Thick_Infinite_Cyl(1e6,.2,100,23,10)
