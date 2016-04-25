@@ -56,8 +56,7 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
     #F=File('PlatePointPinned.exo')
-    ym=get_max_disp(V)
-    return V,ym
+    return V
 
 def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if eletyp is None:
@@ -86,6 +85,7 @@ def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if eletyp is None:
@@ -112,6 +112,7 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 
 def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
@@ -139,6 +140,7 @@ def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
     if eletyp is None:
@@ -169,6 +171,7 @@ def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None)
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
     if eletyp is None:
@@ -199,6 +202,7 @@ def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
     if eletyp is None:
@@ -229,6 +233,7 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=No
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
     if eletyp is None:
@@ -259,6 +264,7 @@ def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=N
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 
 def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
@@ -294,18 +300,22 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
+    return V
 
 
 #E,v,P,OD,h,NinX=None,NinY=None,eletyp=None
-V,ym=Plate_Point_Pinned(1e6,.2,100,23,.4)
-print(ym)
-a=array(V.mesh.coord)
-b=array(V.steps.last.dofs.reshape(a.shape))
-Plate_Point_Clamped(1e6,.2,100,23,.4)
-Plate_Pressure_Pinned(1e6,.2,100,23,.4)
-Plate_Pressure_Clamped(1e6,.2,100,23,.4)
-Washer_Point_Pinned(1e6,.2,100,23,.4)
-Washer_Point_Clamped(1e6,.2,100,23,.4)
-Washer_Pressure_Pinned(1e6,.2,100,23,.4)
-Washer_Pressure_Clamped(1e6,.2,100,23,.4)
-Thick_Infinite_Cyl(1e6,.2,100,23,10)
+V=Plate_Point_Pinned(1e6,.2,1000,23,.4)
+uy_max=get_max_disp(V)
+nnodes=V.numnod
+data1 =array(zeros((nnodes,4)))
+for ii in range(0,nnodes):
+    data1[ii,:]=get_disp_pos(ii,V)
+
+V=Plate_Point_Clamped(1e6,.2,1000,23,.4)
+V=Plate_Pressure_Pinned(1e6,.2,100,23,.4)
+V=Plate_Pressure_Clamped(1e6,.2,100,23,.4)
+V=Washer_Point_Pinned(1e6,.2,100,23,.4)
+V=Washer_Point_Clamped(1e6,.2,100,23,.4)
+V=Washer_Pressure_Pinned(1e6,.2,100,23,.4)
+V=Washer_Pressure_Clamped(1e6,.2,100,23,.4)
+V=Thick_Infinite_Cyl(1e6,.2,100,23,10)
