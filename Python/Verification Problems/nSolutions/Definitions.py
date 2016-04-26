@@ -4,6 +4,23 @@ sys.path.insert(0, '../')
 from pyfem2 import *
 
 
+# DICTIONARY:
+# V = Finite element model object
+# E = Young's Modulus
+# v = Poisson's ratio
+# P = Load applied (pressure or force- context driven)
+# OD= Outside diameter of axisymmetric model
+# inD= Inside diameter of axisymmetric model
+# h = Thickness of model
+# NinX = Number of elements in I (for Rectilinear Mesh)
+# NinY = Number of elements in J (for Rectilinear Mesh)
+# eletyp = Axisymmetric element type 
+# X = Radial position from line of axisymmetry (also known as r)
+# Y = Axial position from zero reference (aligned with axis of symmetry) (also known as z)
+
+# All required inputs for each function should be defined as per parameters above
+# All functions should have **kwargs as inputs so that we may implement dictionaries
+
 #----------------------------------------------------------------------------#
 # ---------------------- Post-Processing Fxns  ------------------------------#
 #----------------------------------------------------------------------------#
