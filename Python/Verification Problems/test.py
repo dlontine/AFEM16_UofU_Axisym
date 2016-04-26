@@ -22,6 +22,7 @@ def test_1():
     # See schematic in documentation (XXXX) for more information.
     
     #### Problem Setup ####
+    problem = dict{'E':1e6,'v':0.3,}
     E = 1e8
     v = 0.3
     OD= 23
