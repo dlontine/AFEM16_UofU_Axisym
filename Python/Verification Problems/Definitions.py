@@ -56,7 +56,9 @@ def get_all_disp_pos(V,**kwargs):
 #----------------------------------------------------------------------------#
 # ------------------------- FEM Problems Setup ------------------------------#
 #----------------------------------------------------------------------------#
-def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
+def Plate_Point_Pinned(E,v,P,OD,h,
+                       NinX=None,NinY=None,eletyp=None,formula=None,
+                       **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -81,17 +83,21 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,*
     step.ConcentratedLoad(kp1, Y, -P)
     step.run()
     V.WriteResults()
-    #if not os.environ.get('NOGRAPHICS'):
-    #    V.Plot2D(show=1, deformed=1)
+    if not os.environ.get('NOGRAPHICS'):
+        V.Plot2D(show=1, deformed=1)
     return V
 
-def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
+def Plate_Point_Clamped(E,v,P,OD,h,
+                        NinX=None,NinY=None,eletyp=None,formula=None,
+                        **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei=100 #Number of elements in I (Diameter)
     if NinY is None:
         nej=4 #Number elements in J (Thickness)
+    if formula is None:
+        formula=1
     R=OD/2.0
     #Find Keypoints of interest
     kp1=nej*(nei+1)+1 #Central point
@@ -114,13 +120,17 @@ def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
+def Plate_Pressure_Pinned(E,v,P,OD,h,
+                          NinX=None,NinY=None,eletyp=None,formula=None,
+                          **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei = 100 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
+    if formula is None:
+        formula=1
     R=OD/2.0
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -142,13 +152,17 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=Non
     return V
 
 
-def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
+def Plate_Pressure_Clamped(E,v,P,OD,h,
+                           NinX=None,NinY=None,eletyp=None,formula=None,
+                           **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei = 100 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
+    if formula is None:
+        formula=1    
     R=OD/2.0
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -169,17 +183,21 @@ def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=No
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
+def Washer_Point_Pinned(E,v,P,OD,h,
+                        NinX=None,NinY=None,eletyp=None,inD=None,formula=None,
+                        **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
-    if InsideD is None:
-        InsideD = OD/2.0 
+    if inD is None:
+        inD = OD/2.0 
+    if formula is None:
+        formula=1
     R  = OD/2.0
-    Ri = InsideD/2.0
+    Ri = inD/2.0
     w  = R-Ri
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -200,17 +218,21 @@ def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,form
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
+def Washer_Point_Clamped(E,v,P,OD,h,
+                         NinX=None,NinY=None,eletyp=None,inD=None,formula=None,
+                         **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
-    if InsideD is None:
-        InsideD = OD/2.0 
+    if inD is None:
+        inD = OD/2.0 
+    if formula is None:
+        formula=1
     R  = OD/2.0
-    Ri = InsideD/2.0
+    Ri = inD/2.0
     w  = R-Ri
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -231,17 +253,21 @@ def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,for
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
+def Washer_Pressure_Pinned(E,v,P,OD,h,
+                           NinX=None,NinY=None,eletyp=None,inD=None,formula=None,
+                           **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
-    if InsideD is None:
-        InsideD = OD/2.0 
+    if inD is None:
+        inD = OD/2.0 
+    if formula is None:
+        formula=1
     R  = OD/2.0
-    Ri = InsideD/2.0
+    Ri = inD/2.0
     w  = R-Ri
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -262,17 +288,21 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,f
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
+def Washer_Pressure_Clamped(E,v,P,OD,h,
+                            NinX=None,NinY=None,eletyp=None,inD=None,formula=None,
+                            **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
         nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
-    if InsideD is None:
-        InsideD = OD/2.0 
+    if inD is None:
+        inD = OD/2.0 
+    if formula is None:
+        formula=1
     R  = OD/2.0
-    Ri = InsideD/2.0
+    Ri = inD/2.0
     w  = R-Ri
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -294,15 +324,19 @@ def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,
     return V
 
 
-def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
+def Thick_Infinite_Cyl(E,v,P,OD,h,
+                       NinX=None,NinY=None,eletyp=None,inD=None,formula=None,
+                       **kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 20 #Number of elements in I (Diameter)
+        nei = 60 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 10 #Number elements in J (Thickness)
     if inD is None:
         inD = OD/2.0 
+    if formula is None:
+        formula=1
     R  = OD/2.0
     Ri = inD/2.0
     w  = R-Ri

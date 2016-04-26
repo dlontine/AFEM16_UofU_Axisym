@@ -11,14 +11,22 @@ from pyfem2 import *
 from Definitions import * 
 
 
-p1=dict({'E':1e8,'P':100,'OD':23.0,'h':.4,'inD':5,'X':6,'Z':0,'v':.2,})
-
+p1=dict({'E':1e6,'P':100,'OD':23.0,'h':.4,'inD':5,'X':6,'Z':0,'v':.2,})
+p2=dict({'E':1e6,'P':10,'OD':23.0,'h':.4,'inD':5,'X':6,'Z':0,'v':.2,})
     
 ####-----FEM-----####
-V=Thick_Infinite_Cyl(**p1)
+print('CP1')
+#V=Thick_Infinite_Cyl(**p1)
 #ur,uz=A_Thick_Infinite_Cyl(**p1)
 
-
+V=Plate_Point_Pinned(**p1)
+V=Plate_Point_Clamped(**p1)
+V=Plate_Pressure_Pinned(**p2)
+V=Plate_Pressure_Clamped(**p2)
+V=Washer_Point_Pinned(**p1)
+V=Washer_Point_Clamped(**p1)
+V=Washer_Pressure_Pinned(**p2)
+V=Washer_Pressure_Clamped(**p2)
 
 #E = 1e8
 #v = 0.3

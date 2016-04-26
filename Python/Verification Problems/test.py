@@ -124,35 +124,24 @@ def test_4():
     # See schematic in documentation (XXXX) for more information.
     
     #### Problem Setup ####
-    E = 1e6
-    v = 0.3
-    
-    R = 23/2.0 	# Radius of plate
-    t = 0.4 	# Thickness of plate
-    P = 1000 	# Pressure applied to the plate
+    problem = dict({'E':1e6,
+                    'v':0.3,
+                    'P': 100,
+                    'OD':23,
+                    'h' : .4,
+                    'eletyp':AxiSymmetricQuad4,
+                    'formula':1})
     
     ####-----FEM-----####
-    #Construct the FEM solution
-    #Mesh
-    #Loading Conditions
-    #Evaluation of key solution point
-    
-    zFEM = 0.0001
+    V = Plate_Point_Clamped(**problem)
+    zFEM = get_max_disp(V)
     
     ####-----Exact-----####
-    # Solution of the deflection in z as a function of radius r
-    # Solution of the deflection in r as a function of radius r
-    D = E*t**3/(12*(1-v**2)) #Flexural rigidity
-    r=1
-    z=0
-    ur = P/(8*np.pi*D)*((3+v)/(1+v)-1-2*np.log(r/R))*r*z
-    uz = -P/(16*np.pi*D)*((3+v)/(1+v)*(R**2-r**2)+2*r**2*np.log(r/R))
-    # Solution for the maximum deflection in z ***Special Case***
-    zmax = -P/(16*np.pi*D)*((3+v)/(1+v)*R**2)
+    zANA = A_Plate_Point_Clamped(**problem)
     
-    #Compare the solutions
-    #Assert a tolerable error to pass/fail test
-    #assert np.allclose(zFEM,zmax,atol=1e-10)
+    ####-----Error-----####
+    err=(zFEM-zANA)/zANA*100.
+    #assert np.allclose(zFEM,zANA,atol=2)
 	
 def test_5():
     # TEST CASE 4: WITH HOLE
@@ -165,33 +154,24 @@ def test_5():
     # See schematic in documentation (XXXX) for more information.
     
     #### Problem Setup ####
-    E = 1e6
-    v = 0.3
-    
-    R = 23/2.0 	# Radius of plate
-    Ri= 3		# Inside radius (HOLE)
-    t = 0.4 	# Thickness of plate
-    p = 1000 	# Pressure applied to the plate
+    problem = dict({'E':1e6,
+                    'v':0.3,
+                    'P': 100,
+                    'OD':23,
+                    'h' : .4,
+                    'eletyp':AxiSymmetricQuad4,
+                    'formula':1})
     
     ####-----FEM-----####
-    #Construct the FEM solution
-    #Mesh
-    #Loading Conditions
-    #Evaluation of key solution point
-    
-    zFEM = 0.0001
+    V = Washer_Point_Pinned(**problem)
+    zFEM = get_max_disp(V)
     
     ####-----Exact-----####
-    # Solution of the deflection in z as a function of radius r
-    # Solution of the deflection in r as a function of radius r
-    #ur = P/(8*pi*D)*((3+v)/(1+v)-1-2*log(r/R))*r*z
-    #uz = -P/(16*pi*D)*((3+v)/(1+v)*(R**2-r**2)+2*r**2*log(r/R))
-    # Solution for the maximum deflection in z ***Special Case***
-    #zmax = -P/(16*pi*D)*((3+v)/(1+v)*R**2)
+    zANA = A_Washer_Point_Pinned(**problem)
     
-    #Compare the solutions
-    #Assert a tolerable error to pass/fail test
-    #assert np.allclose(zFEM,zmax,atol=1e-10)
+    ####-----Error-----####
+    err=(zFEM-zANA)/zANA*100.
+    #assert np.allclose(zFEM,zANA,atol=2)
 
 test_1()
 test_2()
