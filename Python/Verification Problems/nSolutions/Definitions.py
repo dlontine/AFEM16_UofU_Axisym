@@ -1,14 +1,12 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 23 13:22:45 2016
-
-@author: dlontine
-"""
 import sys
 import pdb
 sys.path.insert(0, '../')
 from pyfem2 import *
 
+
+#----------------------------------------------------------------------------#
+# ---------------------- Post-Processing Fxns  ------------------------------#
+#----------------------------------------------------------------------------#
 def get_max_disp(V):
     uy_max=0
     uy_max2=0
@@ -30,6 +28,16 @@ def get_disp_pos(GP,V):
     Y  = Xi[GP,1]
     return ux,uy,X,Y
 
+def get_all_disp_pos(V):
+    nnodes=V.numnod
+    data = array(zeros((nnodes,4)))
+    for ii in range(0,nnodes):
+        data[ii,:]=get_disp_pos(ii,V)
+    return data
+
+#----------------------------------------------------------------------------#
+# ------------------------- FEM Problems Setup ------------------------------#
+#----------------------------------------------------------------------------#
 def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
@@ -55,7 +63,6 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     V.WriteResults()
     if not os.environ.get('NOGRAPHICS'):
         V.Plot2D(show=1, deformed=1)
-    #F=File('PlatePointPinned.exo')
     return V
 
 def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
@@ -303,19 +310,135 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
     return V
 
 
-#E,v,P,OD,h,NinX=None,NinY=None,eletyp=None
-#V=Plate_Point_Pinned(1e6,.2,1000,23,.4)
-#uy_max=get_max_disp(V)
-#nnodes=V.numnod
-#data1 =array(zeros((nnodes,4)))
-#for ii in range(0,nnodes):
-#    data1[ii,:]=get_disp_pos(ii,V)
-#
-#V=Plate_Point_Clamped(1e6,.2,1000,23,.4)
-#V=Plate_Pressure_Pinned(1e6,.2,100,23,.4)
-#V=Plate_Pressure_Clamped(1e6,.2,100,23,.4)
-#V=Washer_Point_Pinned(1e6,.2,100,23,.4)
-#V=Washer_Point_Clamped(1e6,.2,100,23,.4)
-#V=Washer_Pressure_Pinned(1e6,.2,100,23,.4)
-#V=Washer_Pressure_Clamped(1e6,.2,100,23,.4)
-#V=Thick_Infinite_Cyl(1e6,.2,100,23,10)
+#----------------------------------------------------------------------------#
+# ---------------------- Analytical Slolutions ------------------------------#
+#----------------------------------------------------------------------------#
+def A_Plate_Point_Fellipa_R(r,z,E,v,P,R,h,Ri):
+    D = E*h**3/(12*(1-v**2))
+    a = Ri
+    b = R
+    u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
+    return u_r
+    
+def A_Plate_Point_Fellipa_Z(r,z,E,v,P,R,h):
+    D = E*h**3/(12*(1-v**2))
+    u_z = -P/(16*math.pi*D) * ((3+v)/(1+v)*(R**2-r**2) + 2*r**2*math.log(r/R))
+    return u_z
+    
+
+def PointLoadCenterDiscAnalyticUr(r,z,E,v,P,R,h,Ri):
+    D = E*h**3/(12*(1-v**2))
+    a = Ri
+    b = R
+    u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
+    return u_r
+    
+def A_Thick_Infinite_Cylinder(E,v,P,OD,h,InsideD=None,Xcoord,Ycoord):
+    R  = OD/2.0
+    Ri = InsideD/2.0    
+    u_z=0.0
+    
+    #From Fellipa "Verification Problems" eq 7.2:
+    a=Ri
+    b=R
+    
+    num=a**2*(1+v)*(b**2+r**2*(1-2*v))
+    den=E*(b**2-a**2)*r
+    u_r=P*num/den
+    return u_r,u_z
+
+#Roymech solutions:
+
+def A_Plate_Point_Clamped(E,v,P,RO,h,z,r,RI):
+    D = E*h**3/(12*(1-v**2))
+    u_z = P*r**2/(16*math.pi*D)
+    return u_z
+
+def A_Plate_Point_Pinned(E,v,P,RO,h,z,r,RI):
+    D = E*h**3/(12*(1-v**2))
+    u_z = (5+v)*P*RO**4 / (64*(1+v)*D)
+    return u_z
+
+def A_Plate_Pressure_Clamped(E,v,P,RO,h,z,r,RI):
+    D = E*h**3/(12*(1-v**2))
+    u_z = P*RO**4/(64*D)
+    return u_z
+
+def A_Plate_Pressure_Pinned(E,v,P,RO,h,z,r,RI):
+    D = E*h**3/(12*(1-v**2))
+    u_z = (5+v)*P*r**4/(64*(1+v)*D)
+    return u_z
+
+def A_Washer_Point_Clamped(E,v,P,RO,h,z,r,RI):
+    a = RO
+    b = RI
+    c = a/b
+    t = h
+    k = -.0016*c**6 + .0233*c**5 + -.1285*c**4 + .3072*c**3 - .2544*c**2 + .051
+    u_z = k * P * a**2 / E * t**3
+    return u_z
+
+def A_Washer_Point_Pinned(E,v,P,RO,h,z,r,RI):
+    a = RO
+    b = RI
+    c = a/b
+    t = h
+    k = 0.0111*c**6 - 0.1724*c**5 + 1.0195*c**4 - 2.7879*c**3 + 3.1547*c**2 -1.1484
+    u_z = k * P * a**2 / E * t**3
+    return u_z
+
+def A_Washer_Pressure_Clamped(E,v,P,RO,h,z,r,RI):
+    a = RO
+    b = RI
+    c = a/b
+    t = h
+    k = -0.0015*c**6 + 0.0230*c**5 + -0.1289*c**4 + .3166*c**3 + -0.2812*c**2 + 0.0733
+    u_z = k * P * a**4 / (E * t**3)
+    return u_z
+
+def A_Washer_Pressure_Pinned(E,v,P,RO,h,z,r,RI):
+    a = RO
+    b = RI
+    c = a/b
+    t = h
+    k = 0.01*c**6 + -.1585*c**5 + .9563*c**4 + -2.6988*c**3 + 3.2063*c**2 + -1.4443
+    u_z = k * P * a**4 / (E * t**3)
+    return u_z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#EOF
