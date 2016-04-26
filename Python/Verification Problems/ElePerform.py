@@ -9,7 +9,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib import pyplot as plt
 
-Espan=linspace(1e3,1e5,5)
+Espan=linspace(1e7,5e7,5)
 vspan=linspace(0.01,0.49,5)
 nE=len(Espan)
 nv=len(vspan)
@@ -23,6 +23,7 @@ problem['E']=5
 print(problem)
 for i,E in enumerate(Espan):
     for j,v in enumerate(vspan):
+        
         problem['E']=E
         problem['v']=v
         er[i,j]=C_Plate_Pressure_Pinned(**problem)
