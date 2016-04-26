@@ -90,18 +90,18 @@ def A_Washer_Point_Pinned(E,v,P,OD,h,z,r,inD,**kwargs):
     u_z = k * P * a**2 / E * t**3
     return u_z
 
-def A_Washer_Pressure_Clamped(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
+def A_Washer_Pressure_Clamped(E,v,P,OD,h,z,r,inD,**kwargs):
+    a = OD/2
+    b = inD/2
     c = a/b
     t = h
     k = -0.0015*c**6 + 0.0230*c**5 + -0.1289*c**4 + .3166*c**3 + -0.2812*c**2 + 0.0733
     u_z = k * P * a**4 / (E * t**3)
     return u_z
 
-def A_Washer_Pressure_Pinned(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
+def A_Washer_Pressure_Pinned(E,v,P,OD,h,z,r,inD,**kwargs):
+    a = OD/2
+    b = inD/2
     c = a/b
     t = h
     k = 0.01*c**6 + -.1585*c**5 + .9563*c**4 + -2.6988*c**3 + 3.2063*c**2 + -1.4443
