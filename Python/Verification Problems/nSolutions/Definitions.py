@@ -7,7 +7,7 @@ from pyfem2 import *
 #----------------------------------------------------------------------------#
 # ---------------------- Post-Processing Fxns  ------------------------------#
 #----------------------------------------------------------------------------#
-def get_max_disp(V):
+def get_max_disp(V,**kwargs):
     uy_max=0
     uy_max2=0
     Xi=array(V.mesh.coord)
@@ -19,7 +19,7 @@ def get_max_disp(V):
             uy_max2=ym
     return uy_max2
 
-def get_disp_pos(GP,V):
+def get_disp_pos(GP,V,**kwargs):
     Xi=array(V.mesh.coord)
     ui=array(V.steps.last.dofs.reshape(Xi.shape))
     ux = ui[GP,0]
@@ -28,7 +28,7 @@ def get_disp_pos(GP,V):
     Y  = Xi[GP,1]
     return ux,uy,X,Y
 
-def get_all_disp_pos(V):
+def get_all_disp_pos(V,**kwargs):
     nnodes=V.numnod
     data = array(zeros((nnodes,4)))
     for ii in range(0,nnodes):
@@ -38,7 +38,7 @@ def get_all_disp_pos(V):
 #----------------------------------------------------------------------------#
 # ------------------------- FEM Problems Setup ------------------------------#
 #----------------------------------------------------------------------------#
-def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
+def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -65,7 +65,7 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
+def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -94,7 +94,7 @@ def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
+def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -122,7 +122,7 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
     return V
 
 
-def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
+def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -149,7 +149,7 @@ def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None):
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
+def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -180,7 +180,7 @@ def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None)
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
+def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -211,7 +211,7 @@ def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
+def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -242,7 +242,7 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=No
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
+def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -274,7 +274,7 @@ def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=N
     return V
 
 
-def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,InsideD=None):
+def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -333,7 +333,11 @@ def PointLoadCenterDiscAnalyticUr(r,z,E,v,P,R,h,Ri):
     u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
     return u_r
     
-def A_Thick_Infinite_Cylinder(E,v,P,OD,h,InsideD=None,Xcoord,Ycoord):
+def A_Thick_Infinite_Cylinder(E,v,P,OD,h,Xcoord=None,Ycoord=None,InsideD=None,):
+    if Xcoord is None:
+        Xcoord=0.0
+    if Ycoord is None:
+        Ycoord=0.0
     R  = OD/2.0
     Ri = InsideD/2.0    
     u_z=0.0
