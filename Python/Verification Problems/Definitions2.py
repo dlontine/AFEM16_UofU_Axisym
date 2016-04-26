@@ -65,19 +65,22 @@ def A_Plate_Point_Clamped(E,v,P,RO,h,z,r,RI):
     u_z = P*r**2/(16*math.pi*D)
     return u_z
 
-def A_Plate_Point_Pinned(E,v,P,RO,h,z,r,RI):
+def A_Plate_Point_Pinned(E,v,P,OD,h,**kwargs):
+    RO=OD/2
     D = E*h**3/(12*(1-v**2))
     u_z = (5+v)*P*RO**4 / (64*(1+v)*D)
     return u_z
 
-def A_Plate_Pressure_Clamped(E,v,P,RO,h,z,r,RI):
+def A_Plate_Pressure_Clamped(E,v,P,OD,h,**kwargs):
+    RO=OD/2.0
     D = E*h**3/(12*(1-v**2))
     u_z = P*RO**4/(64*D)
     return u_z
 
-def A_Plate_Pressure_Pinned(E,v,P,RO,h,z,r,RI):
+def A_Plate_Pressure_Pinned(E,v,P,OD,h,**kwargs):
+    r=OD/2
     D = E*h**3/(12*(1-v**2))
-    u_z = (5+v)*P*r**4/(64*(1+v)*D)
+    u_z = -(5+v)*P*r**4/(64*(1+v)*D)
     return u_z
 
 def A_Washer_Point_Clamped(E,v,P,RO,h,z,r,RI):

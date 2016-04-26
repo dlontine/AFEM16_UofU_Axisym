@@ -2,6 +2,7 @@ import sys
 import pdb
 sys.path.insert(0, '../')
 from pyfem2 import *
+from Definitions2 import *
 
 
 # DICTIONARY:
@@ -55,13 +56,15 @@ def get_all_disp_pos(V,**kwargs):
 #----------------------------------------------------------------------------#
 # ------------------------- FEM Problems Setup ------------------------------#
 #----------------------------------------------------------------------------#
-def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
+def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 41 #Number of elements in I (Diameter)
+        nei = 100 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
+    if formula is None:
+        formula=1
     R=OD/2.0
     kp1=nej*(nei+1)+1 #Central point
     kp2=nei+1         #Bottom outside edge
@@ -70,7 +73,7 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePointPinned')
     V.ElementBlock('ElementBlock1', ALL)
-    V.AssignProperties('ElementBlock1', eletyp, mat)
+    V.AssignProperties('ElementBlock1', eletyp, mat, formulation=formula)
     
     step = V.StaticStep()
     step.PinNodes(kp2)
@@ -78,15 +81,15 @@ def Plate_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     step.ConcentratedLoad(kp1, Y, -P)
     step.run()
     V.WriteResults()
-    if not os.environ.get('NOGRAPHICS'):
-        V.Plot2D(show=1, deformed=1)
+    #if not os.environ.get('NOGRAPHICS'):
+    #    V.Plot2D(show=1, deformed=1)
     return V
 
-def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
+def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei=41 #Number of elements in I (Diameter)
+        nei=100 #Number of elements in I (Diameter)
     if NinY is None:
         nej=4 #Number elements in J (Thickness)
     R=OD/2.0
@@ -99,7 +102,7 @@ def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePointClamped')
     V.ElementBlock('ElementBlock1', ALL)
-    V.AssignProperties('ElementBlock1', eletyp, mat)
+    V.AssignProperties('ElementBlock1', eletyp, mat, formulation=formula)
     
     step = V.StaticStep()
     step.FixNodes(IHI)
@@ -111,11 +114,11 @@ def Plate_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
+def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 41 #Number of elements in I (Diameter)
+        nei = 100 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
     R=OD/2.0
@@ -126,7 +129,7 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePressurePinned')
     V.ElementBlock('ElementBlock1', ALL)
-    V.AssignProperties('ElementBlock1', eletyp, mat)
+    V.AssignProperties('ElementBlock1', eletyp, mat, formulation=formula)
     
     step = V.StaticStep()
     step.PinNodes(kp2)
@@ -139,11 +142,11 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
     return V
 
 
-def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
+def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 41 #Number of elements in I (Diameter)
+        nei = 100 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
     R=OD/2.0
@@ -166,11 +169,11 @@ def Plate_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,**kwargs):
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
+def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 20 #Number of elements in I (Diameter)
+        nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
     if InsideD is None:
@@ -197,11 +200,11 @@ def Washer_Point_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kw
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
+def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 20 #Number of elements in I (Diameter)
+        nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
     if InsideD is None:
@@ -228,11 +231,11 @@ def Washer_Point_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**k
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
+def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 20 #Number of elements in I (Diameter)
+        nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
     if InsideD is None:
@@ -259,11 +262,11 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,*
         V.Plot2D(show=1, deformed=1)
     return V
 
-def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
+def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 20 #Number of elements in I (Diameter)
+        nei = 50 #Number of elements in I (Diameter)
     if NinY is None:
         nej = 4 #Number elements in J (Thickness)
     if InsideD is None:
@@ -291,7 +294,7 @@ def Washer_Pressure_Clamped(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,
     return V
 
 
-def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwargs):
+def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,formula=None,**kwargs):
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
@@ -326,137 +329,33 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,NinX=None,NinY=None,eletyp=None,inD=None,**kwa
         V.Plot2D(show=1, deformed=1)
     return V
 
-
 #----------------------------------------------------------------------------#
-# ---------------------- Analytical Slolutions ------------------------------#
+# ------------------------- Element Evaluation ------------------------------#
 #----------------------------------------------------------------------------#
-def A_Plate_Point_Fellipa_R(r,z,E,v,P,R,h,Ri):
-    D = E*h**3/(12*(1-v**2))
-    a = Ri
-    b = R
-    u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
-    return u_r
-    
-def A_Plate_Point_Fellipa_Z(r,z,E,v,P,R,h):
-    D = E*h**3/(12*(1-v**2))
-    u_z = -P/(16*math.pi*D) * ((3+v)/(1+v)*(R**2-r**2) + 2*r**2*math.log(r/R))
-    return u_z
-    
 
-def PointLoadCenterDiscAnalyticUr(r,z,E,v,P,R,h,Ri):
-    D = E*h**3/(12*(1-v**2))
-    a = Ri
-    b = R
-    u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
-    return u_r
-    
-def A_Thick_Infinite_Cyl(E,v,P,OD,h,X=None,Y=None,inD=None,**kwargs):
-    #Function robustness items:    
-    if Xcoord is None:
-        Xcoord=0.0
-    if Ycoord is None:
-        Ycoord=0.0 
-    u_z=0.0 #All z displacement is fixed due to boundary conditions (plane strain)
-    #From Fellipa "Verification Problems" eq 7.2:
-    a=OD/2.0
-    b=inD/2.0
-    num=a**2*(1+v)*(b**2+r**2*(1-2*v))
-    den=E*(b**2-a**2)*r
-    u_r=P*num/den
-    return u_r,u_z
+def C_Plate_Point_Pinned(E,v,P,OD,h,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Plate_Point_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,formula)
+    zFEM = get_max_disp(V)
+    zANA = -A_Plate_Point_Pinned(E,v,P,OD,h)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    return err
 
-#Roymech solutions:
-
-def A_Plate_Point_Clamped(E,v,P,RO,h,z,r,RI):
-    D = E*h**3/(12*(1-v**2))
-    u_z = P*r**2/(16*math.pi*D)
-    return u_z
-
-def A_Plate_Point_Pinned(E,v,P,RO,h,z,r,RI):
-    D = E*h**3/(12*(1-v**2))
-    u_z = (5+v)*P*RO**4 / (64*(1+v)*D)
-    return u_z
-
-def A_Plate_Pressure_Clamped(E,v,P,RO,h,z,r,RI):
-    D = E*h**3/(12*(1-v**2))
-    u_z = P*RO**4/(64*D)
-    return u_z
-
-def A_Plate_Pressure_Pinned(E,v,P,RO,h,z,r,RI):
-    D = E*h**3/(12*(1-v**2))
-    u_z = (5+v)*P*r**4/(64*(1+v)*D)
-    return u_z
-
-def A_Washer_Point_Clamped(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
-    c = a/b
-    t = h
-    k = -.0016*c**6 + .0233*c**5 + -.1285*c**4 + .3072*c**3 - .2544*c**2 + .051
-    u_z = k * P * a**2 / E * t**3
-    return u_z
-
-def A_Washer_Point_Pinned(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
-    c = a/b
-    t = h
-    k = 0.0111*c**6 - 0.1724*c**5 + 1.0195*c**4 - 2.7879*c**3 + 3.1547*c**2 -1.1484
-    u_z = k * P * a**2 / E * t**3
-    return u_z
-
-def A_Washer_Pressure_Clamped(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
-    c = a/b
-    t = h
-    k = -0.0015*c**6 + 0.0230*c**5 + -0.1289*c**4 + .3166*c**3 + -0.2812*c**2 + 0.0733
-    u_z = k * P * a**4 / (E * t**3)
-    return u_z
-
-def A_Washer_Pressure_Pinned(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
-    c = a/b
-    t = h
-    k = 0.01*c**6 + -.1585*c**5 + .9563*c**4 + -2.6988*c**3 + 3.2063*c**2 + -1.4443
-    u_z = k * P * a**4 / (E * t**3)
-    return u_z
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#EOF
+def C_Plate_Pressure_Pinned(E,v,P,OD,h,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Plate_Pressure_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,formula)
+    zFEM = get_max_disp(V)
+    zANA = A_Plate_Pressure_Pinned(E,v,P,OD,h)
+    print('New Test')
+    print('E',E)
+    print('v',v)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    return err
