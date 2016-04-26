@@ -11,11 +11,12 @@ from pyfem2 import *
 from Definitions import * 
 
 
-p1=dict({'E':1e8,'v':.2,'P':100,'OD':23.0,'h':.4,'inD':5})
+p1=dict({'E':1e8,'P':100,'OD':23.0,'h':.4,'inD':5,'X':6,'Z':0,'v':.2,})
 
     
 ####-----FEM-----####
-V=Plate_Point_Pinned(**p1)
+V=Thick_Infinite_Cyl(**p1)
+#ur,uz=A_Thick_Infinite_Cyl(**p1)
 
 
 

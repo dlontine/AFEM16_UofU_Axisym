@@ -6,6 +6,7 @@ import pdb
 sys.path.insert(0, '../')
 from pyfem2 import *
 from Definitions import *
+from Definitions2 import *
 
 #This code utilizes the testing framework within python to run verification tests on the FEM solver that we have developed.
 
