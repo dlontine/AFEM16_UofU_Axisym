@@ -1,6 +1,11 @@
 import os
 import numpy as np
 import subprocess
+import sys
+import pdb
+sys.path.insert(0, '../')
+from pyfem2 import *
+from Definitions import *
 
 #This code utilizes the testing framework within python to run verification tests on the FEM solver that we have developed.
 
@@ -8,7 +13,8 @@ def test_1():
     # TEST CASE 1
     # Geometry: Flat circular plate with no holes
     # Supports: Simply supported at radius r
-    # Loads: 	Uniform pressure load across entire plate
+    # Loads:    Uniform pressure load across entire plate
+    # ELEMENT TYPE: AxiSymmetricQuad4
     #
     # Objective of test: 
     # Verify that element in development produces appropriate maximum deflection at the center of the plate. 
@@ -17,25 +23,20 @@ def test_1():
     #### Problem Setup ####
     E = 1e8
     v = 0.3
-    
-    r = 23/2.0 	# Radius of plate
+    OD= 23
+    r = OD/2.0 	# Radius of plate
     t = 0.4 	# Thickness of plate
-    p = E/1e5 	# Pressure applied to the plate
+    P = E/1e5 	# Pressure applied to the plate
     
     ####-----FEM-----####
-    #Construct the FEM solution
-    #Mesh
-    #Loading Conditions
-    #Evaluation of key solution point
-    
-    zFEM = 190.10194885
+    V=Plate_Pressure_Pinned(E,v,P,OD,h)
+    zFEM=get_max_disp(V)
     
     ####-----Exact-----####
-    D = E*t**3/(12*(1-v**2)) #Flexural rigidity
-    zmax=(5+v)*p*r**4/(64*(1+v)*D)
+    Amax=A_Plate_Pressure_Pinned(E,v,P,r,t,0,0)
 	
 	
-    print(zmax)
+    print(Amax)
     print(zFEM)
     #Compare the solutions
     #Assert a tolerable error to pass/fail test
