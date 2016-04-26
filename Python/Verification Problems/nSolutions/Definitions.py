@@ -350,19 +350,16 @@ def PointLoadCenterDiscAnalyticUr(r,z,E,v,P,R,h,Ri):
     u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
     return u_r
     
-def A_Thick_Infinite_Cylinder(E,v,P,OD,h,Xcoord=None,Ycoord=None,InsideD=None,):
+def A_Thick_Infinite_Cylinder(E,v,P,OD,h,X=None,Y=None,inD=None,**kwargs):
+    #Function robustness items:    
     if Xcoord is None:
         Xcoord=0.0
     if Ycoord is None:
-        Ycoord=0.0
-    R  = OD/2.0
-    Ri = InsideD/2.0    
-    u_z=0.0
-    
+        Ycoord=0.0 
+    u_z=0.0 #All z displacement is fixed due to boundary conditions (plane strain)
     #From Fellipa "Verification Problems" eq 7.2:
-    a=Ri
-    b=R
-    
+    a=OD/2.0
+    b=inD/2.0
     num=a**2*(1+v)*(b**2+r**2*(1-2*v))
     den=E*(b**2-a**2)*r
     u_r=P*num/den
