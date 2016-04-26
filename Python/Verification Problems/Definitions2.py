@@ -2,7 +2,8 @@ import sys
 import pdb
 sys.path.insert(0, '../')
 from pyfem2 import *
-
+import math
+import numpy as np
 
 # DICTIONARY:
 # V = Finite element model object
@@ -23,25 +24,12 @@ from pyfem2 import *
 #----------------------------------------------------------------------------#
 # ---------------------- Analytical Slolutions ------------------------------#
 #----------------------------------------------------------------------------#
-def A_Plate_Point_Fellipa_R(r,z,E,v,P,R,h,Ri):
+def A_Plate_Point_Fellipa(E,v,P,OD,h,z=None,r=None,inD=None,**kwargs):
     D = E*h**3/(12*(1-v**2))
-    a = Ri
-    b = R
-    u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
-    return u_r
-    
-def A_Plate_Point_Fellipa_Z(r,z,E,v,P,R,h):
-    D = E*h**3/(12*(1-v**2))
-    u_z = -P/(16*math.pi*D) * ((3+v)/(1+v)*(R**2-r**2) + 2*r**2*math.log(r/R))
-    return u_z
-    
-
-def PointLoadCenterDiscAnalyticUr(r,z,E,v,P,R,h,Ri):
-    D = E*h**3/(12*(1-v**2))
-    a = Ri
-    b = R
-    u_r = P * a**2 * (1+v) * (b**2 + r**2 * (1 - 2*v)) / (E * (b**2 - a**2) * r)
-    return u_r
+    R = OD/2
+    u_r = P / (8*math.pi*D) * ((3+v)/(1+v) - 1 - 2*math.log(r/R))*r*z
+    u_z = -P / (16*math.pi*D) * ((3+v)/(1+v)*(R**2-r**2) + 2*r**2*math.log(r/R))
+    return u_r,u_z
     
 def A_Thick_Infinite_Cyl(E,v,P,OD,h,X=None,Y=None,inD=None,**kwargs):
     #Function robustness items:    
@@ -60,12 +48,13 @@ def A_Thick_Infinite_Cyl(E,v,P,OD,h,X=None,Y=None,inD=None,**kwargs):
 
 #Roymech solutions:
 
-def A_Plate_Point_Clamped(E,v,P,RO,h,z,r,RI):
+def A_Plate_Point_Clamped(E,v,P,OD,h,z=None,r=None,inD=None,**kwargs):
     D = E*h**3/(12*(1-v**2))
     u_z = P*r**2/(16*math.pi*D)
     return u_z
 
-def A_Plate_Point_Pinned(E,v,P,OD,h,**kwargs):
+#The diagram does not show a pinned support, rather a roller. Agree?
+def A_Plate_Point_Pinned(E,v,P,OD,h,z=None,r=None,inD=None,**kwargs):
     RO=OD/2
     D = E*h**3/(12*(1-v**2))
     u_z = (5+v)*P*RO**4 / (64*(1+v)*D)
@@ -83,18 +72,18 @@ def A_Plate_Pressure_Pinned(E,v,P,OD,h,**kwargs):
     u_z = -(5+v)*P*r**4/(64*(1+v)*D)
     return u_z
 
-def A_Washer_Point_Clamped(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
+def A_Washer_Point_Clamped(E,v,P,OD,h,z,r,inD,**kwargs):
+    a = OD/2
+    b = inD/2
     c = a/b
     t = h
     k = -.0016*c**6 + .0233*c**5 + -.1285*c**4 + .3072*c**3 - .2544*c**2 + .051
-    u_z = k * P * a**2 / E * t**3
+    u_z = k * P * a**2 / (E * t**3)
     return u_z
 
-def A_Washer_Point_Pinned(E,v,P,RO,h,z,r,RI):
-    a = RO
-    b = RI
+def A_Washer_Point_Pinned(E,v,P,OD,h,z,r,inD,**kwargs):
+    a = OD/2
+    b = inD/2
     c = a/b
     t = h
     k = 0.0111*c**6 - 0.1724*c**5 + 1.0195*c**4 - 2.7879*c**3 + 3.1547*c**2 -1.1484
