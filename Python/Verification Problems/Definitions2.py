@@ -48,62 +48,95 @@ def A_Thick_Infinite_Cyl(E,v,P,OD,h,X=None,Y=None,inD=None,**kwargs):
 
 #Roymech solutions:
 
-def A_Plate_Point_Clamped(E,v,P,OD,h,z=None,r=None,inD=None,**kwargs):
+def A_Plate_Point_Clamped(E,v,P,OD,h,**kwargs):
+    #Done by Derek
+    #From Roark's handbook p492
+    W=P
+    a=OD/2
     D = E*h**3/(12*(1-v**2))
-    u_z = P*(OD/2)**2/(16*math.pi*D)
-    return u_z
-
-#The diagram does not show a pinned support, rather a roller. Agree?
-def A_Plate_Point_Pinned(E,v,P,OD,h,z=None,r=None,inD=None,**kwargs):
-    RO=OD/2
+    y_max=-W*a**2/(16*pi*D)
+    return y_max
+    
+def A_Plate_Point_Pinned(E,v,P,OD,h,**kwargs):
+    #Done by Derek    
+    #This is from the Roark's handbook p491
+    W=P
+    a=OD/2
     D = E*h**3/(12*(1-v**2))
-    u_z = (5+v)*P*RO**4 / (64*(1+v)*D)
-    return u_z
+    y_max= -W*a**2*(3+v)/(16*pi*D*(1+v))
+    return y_max
 
 def A_Plate_Pressure_Clamped(E,v,P,OD,h,**kwargs):
-    RO=OD/2.0
+    #Done by Derek
+    #From Roark's p488, 10b
+    ###### FEM AND ANALYTICAL MATCH #####
     D = E*h**3/(12*(1-v**2))
-    u_z = P*RO**4/(64*D)
-    return u_z
-
+    a = OD/2
+    y_max=-P*a**4/(64*D)
+    return y_max
+    
 def A_Plate_Pressure_Pinned(E,v,P,OD,h,**kwargs):
-    r=OD/2
+    #Done by Derek
+    #Roark's handbook p488, 10a
     D = E*h**3/(12*(1-v**2))
-    u_z = -(5+v)*P*r**4/(64*(1+v)*D)
-    return u_z
+    a = OD/2
+    y_max=-P*a**4*(5+v)/(64*D*(1+v))
+    return y_max
+    
 
 def A_Washer_Point_Clamped(E,v,P,OD,h,inD,**kwargs):
-    a = OD/2
-    b = inD/2
-    c = a/b
-    t = h
-    k = -.0016*c**6 + .0233*c**5 + -.1285*c**4 + .3072*c**3 - .2544*c**2 + .051
-    u_z = k * P * a**2 / (E * t**3)
-    return u_z
+    #Done by Derek
+    #Roark's handbook 461, 1e
+    a=OD/2
+    b=inD/2
+    ro=b
+    D = E*h**3/(12*(1-v**2))
+    C1=(1+v)/2*(b/a)*log(a/b)+(1-v)/4*(a/b-b/a)
+    C4=1/2*((1+v)*(b/a)+(1-v)*(a/b))
+    L3=(ro/(4*a))*(((ro/a)**2+1)*log(a/ro)+(ro/a)**2-1)
+    L6=(ro/(4*a))*((ro/a)**2-1+2*log(a/ro))
+    y_max = -P*a**3/D * (C1*L6/C4-L3)
+    return y_max
+
 
 def A_Washer_Point_Pinned(E,v,P,OD,h,inD,**kwargs):
-    a = OD/2
-    b = inD/2
-    c = a/b
-    t = h
-    k = 0.0111*c**6 - 0.1724*c**5 + 1.0195*c**4 - 2.7879*c**3 + 3.1547*c**2 -1.1484
-    u_z = k * P * a**2 / E * t**3
-    return u_z
+    #Done by Derek
+    #Roark's handbook 459, 1
+    a=OD/2
+    b=inD/2
+    ro=b
+    D = E*h**3/(12*(1-v**2))
+    C4=1/2*((1+v)*(b/a)+(1-v)*(a/b))
+    C7=1/2*(1-v**2)*(a/b-b/a)
+    L6=(ro/(4*a))*((ro/a)**2-1+2*log(a/ro))
+    L9=(ro/a)*((1+v)/2*log(a/ro)+(1+v)/4*(1-(ro/a)**2))
+    y_max = (-P*a**2/D)*(C4*L9/C7-L6)
+    return y_max
+
 
 def A_Washer_Pressure_Clamped(E,v,P,OD,h,inD,**kwargs):
-    a = OD/2
-    b = inD/2
-    c = a/b
-    t = h
-    k = -0.0015*c**6 + 0.0230*c**5 + -0.1289*c**4 + .3166*c**3 + -0.2812*c**2 + 0.0733
-    u_z = k * P * a**4 / (E * t**3)
-    return u_z
+    #Done by Derek
+    #Roark's handbook p465,2e
+    a=OD/2
+    b=inD/2
+    ro=b
+    D = E*h**3/(12*(1-v**2))
+    C1 =(1+v)/2*(b/a)*log(a/b)+(1+v)/4*(a/b-b/a)
+    C4 =1/2*((1+v)*(b/a)+(1-v)*(a/b))
+    L11=1/64*(1+4*(ro/a)**2-5*(ro/a)**4-4*(ro/a)**2*(2+(ro/a)**2)*log(a/ro))
+    L14=1/16*(1-(ro/a)**4-4*(ro/a)**2*log(a/ro))
+    y_max = (-P*a**4)/D*(C1*L14/C4-L11)
+    return y_max
 
 def A_Washer_Pressure_Pinned(E,v,P,OD,h,inD,**kwargs):
-    a = OD/2
-    b = inD/2
-    c = a/b
-    t = h
-    k = 0.01*c**6 + -.1585*c**5 + .9563*c**4 + -2.6988*c**3 + 3.2063*c**2 + -1.4443
-    u_z = k * P * a**4 / (E * t**3)
-    return u_z
+    #Done by Derek
+    #Roark's handbook p464, 2a
+    a=OD/2
+    b=inD/2
+    ro=b
+    C1 =(1+v)/2*(b/a)*log(a/b)+(1+v)/4*(a/b-b/a)
+    C7 =1/2*(1-v**2)*(a/b-b/a)
+    L11=1/64*(1+4*(ro/a)**2-5*(ro/a)**4-4*(ro/a)**2*(2+(ro/a)**2)*log(a/ro))
+    L17=1/4*(1-(1-v)/4*(1-(ro/a)**4)-(ro/a)**2*(1+(1+v)*log(a/ro)))
+    y_max=-P*a**4/D*(C1*L17/C7-L11)
+    return y_max
