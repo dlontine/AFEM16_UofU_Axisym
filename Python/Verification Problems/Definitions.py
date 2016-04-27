@@ -62,15 +62,15 @@ def Plate_Point_Pinned(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 100 #Number of elements in I (Diameter)
+        NinX = 100 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if formula is None:
         formula=1
     R=OD/2.0
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=R, ly=h)
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=R, ly=h)
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePointPinned')
@@ -93,17 +93,17 @@ def Plate_Point_Clamped(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei=100 #Number of elements in I (Diameter)
+        NinX=100 #Number of elements in I (Diameter)
     if NinY is None:
-        nej=4 #Number elements in J (Thickness)
+        NinY=4 #Number elements in J (Thickness)
     if formula is None:
         formula=1
     R=OD/2.0
     #Find Keypoints of interest
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
     
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=R, ly=h)
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=R, ly=h)
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePointClamped')
@@ -126,15 +126,15 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 100 #Number of elements in I (Diameter)
+        NinX = 100 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if formula is None:
         formula=1
     R=OD/2.0
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=R, ly=h)
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=R, ly=h)
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePressurePinned')
@@ -158,15 +158,15 @@ def Plate_Pressure_Clamped(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 100 #Number of elements in I (Diameter)
+        NinX = 100 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if formula is None:
         formula=1    
     R=OD/2.0
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=R, ly=h)
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=R, ly=h)
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='PlatePointPinned')
@@ -189,9 +189,9 @@ def Washer_Point_Pinned(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 50 #Number of elements in I (Diameter)
+        NinX = 50 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if inD is None:
         inD = OD/2.0 
     if formula is None:
@@ -199,9 +199,9 @@ def Washer_Point_Pinned(E,v,P,OD,h,
     R  = OD/2.0
     Ri = inD/2.0
     w  = R-Ri
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=w, ly=h,shift=[Ri,0])
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=w, ly=h,shift=[Ri,0])
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='WasherPointPinned')
@@ -224,9 +224,9 @@ def Washer_Point_Clamped(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 50 #Number of elements in I (Diameter)
+        NinX = 50 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if inD is None:
         inD = OD/2.0 
     if formula is None:
@@ -234,9 +234,9 @@ def Washer_Point_Clamped(E,v,P,OD,h,
     R  = OD/2.0
     Ri = inD/2.0
     w  = R-Ri
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=w, ly=h,shift=[Ri,0])
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=w, ly=h,shift=[Ri,0])
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='WasherPointClamped')
@@ -259,9 +259,9 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 50 #Number of elements in I (Diameter)
+        NinX = 50 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if inD is None:
         inD = OD/2.0 
     if formula is None:
@@ -269,9 +269,9 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,
     R  = OD/2.0
     Ri = inD/2.0
     w  = R-Ri
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=w, ly=h,shift=[Ri,0])
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=w, ly=h,shift=[Ri,0])
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='WasherPressurePinned')
@@ -294,9 +294,9 @@ def Washer_Pressure_Clamped(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 50 #Number of elements in I (Diameter)
+        NinX = 50 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 4 #Number elements in J (Thickness)
+        NinY = 4 #Number elements in J (Thickness)
     if inD is None:
         inD = OD/2.0 
     if formula is None:
@@ -304,9 +304,9 @@ def Washer_Pressure_Clamped(E,v,P,OD,h,
     R  = OD/2.0
     Ri = inD/2.0
     w  = R-Ri
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=w, ly=h,shift=[Ri,0])
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=w, ly=h,shift=[Ri,0])
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='WasherPressurePinned')
@@ -330,9 +330,9 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,
     if eletyp is None:
         eletyp = AxiSymmetricQuad4
     if NinX is None:
-        nei = 60 #Number of elements in I (Diameter)
+        NinX = 60 #Number of elements in I (Diameter)
     if NinY is None:
-        nej = 10 #Number elements in J (Thickness)
+        NinY = 10 #Number elements in J (Thickness)
     if inD is None:
         inD = OD/2.0 
     if formula is None:
@@ -340,9 +340,9 @@ def Thick_Infinite_Cyl(E,v,P,OD,h,
     R  = OD/2.0
     Ri = inD/2.0
     w  = R-Ri
-    kp1=nej*(nei+1)+1 #Central point
-    kp2=nei+1         #Bottom outside edge
-    mesh = RectilinearMesh2D(nx=nei, ny=nej, lx=w, ly=h,shift=[Ri,0])
+    kp1=NinY*(NinX+1)+1 #Central point
+    kp2=NinX+1         #Bottom outside edge
+    mesh = RectilinearMesh2D(nx=NinX, ny=NinY, lx=w, ly=h,shift=[Ri,0])
     mat = Material('Material-1', elastic={'E':E, 'Nu':v})
     
     V = FiniteElementModel(mesh=mesh, jobid='InfiniteCylinder')
@@ -385,11 +385,33 @@ def C_Plate_Pressure_Pinned(E,v,P,OD,h,
     V = Plate_Pressure_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,formula)
     zFEM = get_max_disp(V)
     zANA = A_Plate_Pressure_Pinned(E,v,P,OD,h)
-    print('New Test')
-    print('E',E)
-    print('v',v)
     print(zFEM)
     print(zANA)
     err=(zFEM-zANA)/zANA*100.
     print(err)
     return err
+    
+def C_Plate_Point_Clamped(E,v,P,OD,h,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Plate_Point_Clamped(E,v,P,OD,h,NinX,NinY,eletyp,formula)
+    zFEM = get_max_disp(V)
+    zANA = -A_Plate_Point_Clamped(E,v,P,OD,h)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    return err
+    
+def C_Plate_Pressure_Clamped(E,v,P,OD,h,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Plate_Pressure_Clamped(E,v,P,OD,h,NinX,NinY,eletyp,formula)
+    zFEM = get_max_disp(V)
+    zANA = -A_Plate_Pressure_Clamped(E,v,P,OD,h)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    nele=V.numele
+    return err,nele

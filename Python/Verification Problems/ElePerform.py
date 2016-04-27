@@ -17,7 +17,7 @@ er=zeros([nE,nv])
 problem=dict({'P':10,
               'OD':23,
               'h':.5,
-              'eletyp':AxiSymmetricQuad4SelectiveReduced,
+              'eletyp':AxiSymmetricQuad4Reduced,
               'formula':1})
 problem['E']=5
 print(problem)
@@ -26,7 +26,7 @@ for i,E in enumerate(Espan):
         
         problem['E']=E
         problem['v']=v
-        er[i,j]=C_Plate_Pressure_Pinned(**problem)
+        er[i,j]=C_Plate_Pressure_Clamped(**problem)
         
 
 Espan2=zeros([nE,nv])
