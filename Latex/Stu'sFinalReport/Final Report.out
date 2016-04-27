@@ -1,0 +1,13 @@
+\BOOKMARK [0][-]{chapter.1}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Introduction}{}% 2
+\BOOKMARK [0][-]{chapter.3}{Analytical Formulation}{}% 3
+\BOOKMARK [0][-]{chapter.4}{What we actually ``did"}{}% 4
+\BOOKMARK [0][-]{chapter.5}{Computational Implementation}{}% 5
+\BOOKMARK [1][-]{section.5.1}{Full integration}{chapter.5}% 6
+\BOOKMARK [1][-]{section.5.2}{Reduced Integration with Hourglass Control}{chapter.5}% 7
+\BOOKMARK [1][-]{section.5.3}{Implementation}{chapter.5}% 8
+\BOOKMARK [0][-]{chapter.6}{Verification Problems}{}% 9
+\BOOKMARK [1][-]{section.6.1}{Solid Plates}{chapter.6}% 10
+\BOOKMARK [1][-]{section.6.2}{Plate With a Hole \(Washers\)}{chapter.6}% 11
+\BOOKMARK [0][-]{chapter.7}{Performance Evaluation}{}% 12
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 13
