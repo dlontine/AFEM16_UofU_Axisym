@@ -114,6 +114,7 @@ The full integration element was not developed by the authors, however, it is us
 The full integration element applies gauss points at $(x,y)=(\pm\sqrt{\frac{1}{3}},\pm\sqrt{\frac{1}{3}})$ inside the element. This is applying 2 gauss points for each dimension. The gauss weight for each of the gauss points is equal to 1.
 
 As will be discussed in great detail, this element can exhibit problems such as shear and volume locking in different scenarios.
+\newpage
 \begin{lstlisting}[language=python]
 from numpy import *
 from .isop2_4 import CSDIsoParametricQuad4 as BaseElement
@@ -145,40 +146,40 @@ class AxiSymmetricQuad4(BaseElement):
 \end{lstlisting}
 
 
-\section{Selective Reduced Integration}
-
-
-\begin{lstlisting}[language=Python]
-from numpy import *
-from .isop2_4 import CSDIsoParametricQuad4 as BaseElement
-# --------------------------------------------------------------------------- #
-# ---------- Axisymmetric Selective Reduced Integration Element ------------- #
-# --------------------------------------------------------------------------- #
-class AxiSymmetricQuad4SelectiveReduced(BaseElement):
-    ndir = 3
-    nshr = 1
-    integration = 4
-    elefab = {'formulation': 1}
-    gaussw = ones(4)
-    gaussp = array([[-1., -1.], [ 1., -1.], [-1.,  1.], [ 1.,  1.]]) / sqrt(3.)
-    selective_reduced = True
-    srip = array([[0.,0.]])
-    sriw = array([4.])
-    @property
-    def formulation(self):
-        return self.axisymmetric
-    @formulation.setter
-    def formulation(self, arg):
-        assert arg in (0, 1, 2)
-        self.axisymmetric = arg
-    def bmatrix(self, dN, N, xi, *args):
-        rp = dot(N, self.xc[:,0])
-        B = zeros((4, 8))
-        B[0, 0::2] = B[3, 1::2] = dN[0, :]
-        B[1, 1::2] = B[3, 0::2] = dN[1, :]
-        B[2, 0::2] = N / rp
-        return B
-\end{lstlisting}
+%\section{Selective Reduced Integration}
+%
+%
+%\begin{lstlisting}[language=Python]
+%from numpy import *
+%from .isop2_4 import CSDIsoParametricQuad4 as BaseElement
+%# --------------------------------------------------------------------------- #
+%# ---------- Axisymmetric Selective Reduced Integration Element ------------- #
+%# --------------------------------------------------------------------------- #
+%class AxiSymmetricQuad4SelectiveReduced(BaseElement):
+%    ndir = 3
+%    nshr = 1
+%    integration = 4
+%    elefab = {'formulation': 1}
+%    gaussw = ones(4)
+%    gaussp = array([[-1., -1.], [ 1., -1.], [-1.,  1.], [ 1.,  1.]]) / sqrt(3.)
+%    selective_reduced = True
+%    srip = array([[0.,0.]])
+%    sriw = array([4.])
+%    @property
+%    def formulation(self):
+%        return self.axisymmetric
+%    @formulation.setter
+%    def formulation(self, arg):
+%        assert arg in (0, 1, 2)
+%        self.axisymmetric = arg
+%    def bmatrix(self, dN, N, xi, *args):
+%        rp = dot(N, self.xc[:,0])
+%        B = zeros((4, 8))
+%        B[0, 0::2] = B[3, 1::2] = dN[0, :]
+%        B[1, 1::2] = B[3, 0::2] = dN[1, :]
+%        B[2, 0::2] = N / rp
+%        return B
+%\end{lstlisting}
 
 
 \section{Reduced Integration with Hourglass Control}
@@ -263,5 +264,15 @@ from .CSDQ8SF import PlaneStressQuad8
 \chapter{Verification Problems}
 
 \chapter{Performance Evaluation}
+
+\newpage
+\begin{lstlisting}[language=Python]
+xforce=...
+c = J * self.gaussw[p]
+if self.axisymmetric == 1:
+	rp = dot(Ne, self.xc[:,0])
+	c *= rp
+xforce += c * dot(Pe.T, dloadx)
+\end{lstlisting}
 
 \end{document}

@@ -134,6 +134,7 @@ def A_Washer_Pressure_Pinned(E,v,P,OD,h,inD,**kwargs):
     a=OD/2
     b=inD/2
     ro=b
+    D = E*h**3/(12*(1-v**2))
     C1 =(1+v)/2*(b/a)*log(a/b)+(1+v)/4*(a/b-b/a)
     C7 =1/2*(1-v**2)*(a/b-b/a)
     L11=1/64*(1+4*(ro/a)**2-5*(ro/a)**4-4*(ro/a)**2*(2+(ro/a)**2)*log(a/ro))
