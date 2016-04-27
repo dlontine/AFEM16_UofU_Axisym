@@ -81,30 +81,30 @@ def find_convergence(Model_Comparison_Function,
     plt.show()
 
 nsteps=3
-pdict=dict({'Model_Comparison_Function':C_Washer_Point_Clamped,
-            'nstep':nsteps,
-            'xmax': 350/2,
-            'title':'Convergence of Clamped Point Washer',
-            'saveas1':'Conv_WaPoCl_1.png',
-            'saveas2':'Conv_WaPoCl_2.png'})
-find_convergence(**pdict)
-
-pdict=dict({'Model_Comparison_Function':C_Washer_Point_Pinned,
-            'nstep':nsteps,
-            'xmax': 350/2,
-            'title':'Convergence of Pinned Point Washer',
-            'saveas1':'Conv_WaPoPi_1.png',
-            'saveas2':'Conv_WaPoPi_2.png'})
-find_convergence(**pdict)
-
-pdict=dict({'Model_Comparison_Function':C_Washer_Pressure_Pinned,
-            'nstep':nsteps,
-            'xmax': 350/2,
-            'title':'Convergence of Pinned Pressure Washer',
-            'saveas1':'Conv_WaPrPi_1.png',
-            'saveas2':'Conv_WaPrPi_2.png'})
-find_convergence(**pdict)
-
+#pdict=dict({'Model_Comparison_Function':C_Washer_Point_Clamped,
+#            'nstep':nsteps,
+#            'xmax': 350/2,
+#            'title':'Convergence of Clamped Point Washer',
+#            'saveas1':'Conv_WaPoCl_1.png',
+#            'saveas2':'Conv_WaPoCl_2.png'})
+#find_convergence(**pdict)
+#
+#pdict=dict({'Model_Comparison_Function':C_Washer_Point_Pinned,
+#            'nstep':nsteps,
+#            'xmax': 350/2,
+#            'title':'Convergence of Pinned Point Washer',
+#            'saveas1':'Conv_WaPoPi_1.png',
+#            'saveas2':'Conv_WaPoPi_2.png'})
+#find_convergence(**pdict)
+#
+#pdict=dict({'Model_Comparison_Function':C_Washer_Pressure_Pinned,
+#            'nstep':nsteps,
+#            'xmax': 350/2,
+#            'title':'Convergence of Pinned Pressure Washer',
+#            'saveas1':'Conv_WaPrPi_1.png',
+#            'saveas2':'Conv_WaPrPi_2.png'})
+#find_convergence(**pdict)
+#
 pdict=dict({'Model_Comparison_Function':C_Washer_Pressure_Clamped,
             'nstep':nsteps,
             'xmax': 350/2,
@@ -112,40 +112,40 @@ pdict=dict({'Model_Comparison_Function':C_Washer_Pressure_Clamped,
             'saveas1':'Conv_WaPrCl_1.png',
             'saveas2':'Conv_WaPrCl_2.png'})
 find_convergence(**pdict)
-
-
+#
+#
 ######
-pdict=dict({'Model_Comparison_Function':C_Plate_Point_Clamped,
-            'nstep':nsteps,
-            'xmax': 350,
-            'title':'Convergence of Clamped Point Plate',
-            'saveas1':'Conv_PlPoCl_1.png',
-            'saveas2':'Conv_PlPoCl_2.png'})
-find_convergence(**pdict)
-
-pdict=dict({'Model_Comparison_Function':C_Plate_Point_Pinned,
-            'nstep':nsteps,
-            'xmax': 350,
-            'title':'Convergence of Pinned Point Plate',
-            'saveas1':'Conv_PlPoPi_1.png',
-            'saveas2':'Conv_PlPoPi_2.png'})
-find_convergence(**pdict)
-
-pdict=dict({'Model_Comparison_Function':C_Plate_Pressure_Pinned,
-            'nstep':nsteps,
-            'xmax': 350,
-            'title':'Convergence of Pinned Pressure Plate',
-            'saveas1':'Conv_PlPrPi_1.png',
-            'saveas2':'Conv_PlPrPi_2.png'})
-find_convergence(**pdict)
-
-pdict=dict({'Model_Comparison_Function':C_Plate_Pressure_Clamped,
-            'nstep':nsteps,
-            'xmax': 350,
-            'title':'Convergence of Clamped Pressure Plate',
-            'saveas1':'Conv_PlPrCl_1.png',
-            'saveas2':'Conv_PlPrCl_2.png'})
-find_convergence(**pdict)
+#pdict=dict({'Model_Comparison_Function':C_Plate_Point_Clamped,
+#            'nstep':nsteps,
+#            'xmax': 350,
+#            'title':'Convergence of Clamped Point Plate',
+#            'saveas1':'Conv_PlPoCl_1.png',
+#            'saveas2':'Conv_PlPoCl_2.png'})
+#find_convergence(**pdict)
+##
+#pdict=dict({'Model_Comparison_Function':C_Plate_Point_Pinned,
+#            'nstep':nsteps,
+#            'xmax': 350,
+#            'title':'Convergence of Pinned Point Plate',
+#            'saveas1':'Conv_PlPoPi_1.png',
+#            'saveas2':'Conv_PlPoPi_2.png'})
+#find_convergence(**pdict)
+##
+#pdict=dict({'Model_Comparison_Function':C_Plate_Pressure_Pinned,
+#            'nstep':nsteps,
+#            'xmax': 350,
+#            'title':'Convergence of Pinned Pressure Plate',
+#            'saveas1':'Conv_PlPrPi_1.png',
+#            'saveas2':'Conv_PlPrPi_2.png'})
+#find_convergence(**pdict)
+#
+#pdict=dict({'Model_Comparison_Function':C_Plate_Pressure_Clamped,
+#            'nstep':nsteps,
+#            'xmax': 350,
+#            'title':'Convergence of Clamped Pressure Plate',
+#            'saveas1':'Conv_PlPrCl_1.png',
+#            'saveas2':'Conv_PlPrCl_2.png'})
+#find_convergence(**pdict)
 
 
 ######
