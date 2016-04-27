@@ -77,8 +77,10 @@ def Plate_Point_Pinned(E,v,P,OD,h,
     V.ElementBlock('ElementBlock1', ALL)
     V.AssignProperties('ElementBlock1', eletyp, mat, formulation=formula)
     
+    #V.PrescribedBC(kp2,Y)
     step = V.StaticStep()
-    step.PinNodes(kp2)
+    #step.PinNodes(kp2)
+    step.FixNodes(kp2)
     step = V.StaticStep()
     step.ConcentratedLoad(kp1, Y, -P)
     step.run()
@@ -141,8 +143,10 @@ def Plate_Pressure_Pinned(E,v,P,OD,h,
     V.ElementBlock('ElementBlock1', ALL)
     V.AssignProperties('ElementBlock1', eletyp, mat, formulation=formula)
     
+    #V.PrescribedBC(kp2,Y)
     step = V.StaticStep()
-    step.PinNodes(kp2)
+    #step.PinNodes(kp2)
+    step.FixNodes(kp2)
     step = V.StaticStep()
     step.Pressure(JHI, P)
     step.run()
@@ -208,8 +212,10 @@ def Washer_Point_Pinned(E,v,P,OD,h,
     V.ElementBlock('ElementBlock1', ALL)
     V.AssignProperties('ElementBlock1', eletyp, mat)
     
+    #V.PrescribedBC(kp2,Y)
     step = V.StaticStep()
-    step.PinNodes(kp2)
+    #step.PinNodes(kp2)
+    step.FixNodes(kp2)
     step = V.StaticStep()
     step.ConcentratedLoad(kp1, Y, -P)
     step.run()
@@ -278,8 +284,10 @@ def Washer_Pressure_Pinned(E,v,P,OD,h,
     V.ElementBlock('ElementBlock1', ALL)
     V.AssignProperties('ElementBlock1', eletyp, mat)
     
+    #V.PrescribedBC(kp2,Y)
     step = V.StaticStep()
-    step.PinNodes(kp2)
+    #step.PinNodes(kp2)
+    step.FixNodes(kp2)
     step = V.StaticStep()
     step.Pressure(JHI, P)
     step.run()
@@ -377,19 +385,8 @@ def C_Plate_Point_Pinned(E,v,P,OD,h,
     print(zANA)
     err=(zFEM-zANA)/zANA*100.
     print(err)
-    return err
-
-def C_Plate_Pressure_Pinned(E,v,P,OD,h,
-                         NinX=None,NinY=None,eletyp=None,
-                         formula=None,**kwargs):
-    V = Plate_Pressure_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,formula)
-    zFEM = get_max_disp(V)
-    zANA = A_Plate_Pressure_Pinned(E,v,P,OD,h)
-    print(zFEM)
-    print(zANA)
-    err=(zFEM-zANA)/zANA*100.
-    print(err)
-    return err
+    nele=V.numele
+    return err,nele
     
 def C_Plate_Point_Clamped(E,v,P,OD,h,
                          NinX=None,NinY=None,eletyp=None,
@@ -401,7 +398,21 @@ def C_Plate_Point_Clamped(E,v,P,OD,h,
     print(zANA)
     err=(zFEM-zANA)/zANA*100.
     print(err)
-    return err
+    nele=V.numele
+    return err,nele
+
+def C_Plate_Pressure_Pinned(E,v,P,OD,h,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Plate_Pressure_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,formula)
+    zFEM = get_max_disp(V)
+    zANA = A_Plate_Pressure_Pinned(E,v,P,OD,h)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    nele=V.numele
+    return err,nele
     
 def C_Plate_Pressure_Clamped(E,v,P,OD,h,
                          NinX=None,NinY=None,eletyp=None,
@@ -409,6 +420,58 @@ def C_Plate_Pressure_Clamped(E,v,P,OD,h,
     V = Plate_Pressure_Clamped(E,v,P,OD,h,NinX,NinY,eletyp,formula)
     zFEM = get_max_disp(V)
     zANA = -A_Plate_Pressure_Clamped(E,v,P,OD,h)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    nele=V.numele
+    return err,nele
+
+def C_Washer_Point_Pinned(E,v,P,OD,h,inD,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Washer_Point_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,inD,formula)
+    zFEM = get_max_disp(V)
+    zANA = -A_Washer_Point_Pinned(E,v,P,OD,h,inD)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    nele=V.numele
+    return err,nele
+    
+def C_Washer_Point_Clamped(E,v,P,OD,h,inD,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Washer_Point_Clamped(E,v,P,OD,h,NinX,NinY,eletyp,inD,formula)
+    zFEM = get_max_disp(V)
+    zANA = -A_Washer_Point_Clamped(E,v,P,OD,h,inD)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    nele=V.numele
+    return err,nele
+
+def C_Washer_Pressure_Pinned(E,v,P,OD,h,inD,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Washer_Pressure_Pinned(E,v,P,OD,h,NinX,NinY,eletyp,inD,formula)
+    zFEM = get_max_disp(V)
+    zANA = A_Washer_Pressure_Pinned(E,v,P,OD,h,inD)
+    print(zFEM)
+    print(zANA)
+    err=(zFEM-zANA)/zANA*100.
+    print(err)
+    nele=V.numele
+    return err,nele
+    
+def C_Washer_Pressure_Clamped(E,v,P,OD,h,inD,
+                         NinX=None,NinY=None,eletyp=None,
+                         formula=None,**kwargs):
+    V = Washer_Pressure_Clamped(E,v,P,OD,h,NinX,NinY,eletyp,inD,formula)
+    zFEM = get_max_disp(V)
+    zANA = -A_Washer_Pressure_Clamped(E,v,P,OD,h,inD)
     print(zFEM)
     print(zANA)
     err=(zFEM-zANA)/zANA*100.

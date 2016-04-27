@@ -50,7 +50,7 @@ def A_Thick_Infinite_Cyl(E,v,P,OD,h,X=None,Y=None,inD=None,**kwargs):
 
 def A_Plate_Point_Clamped(E,v,P,OD,h,z=None,r=None,inD=None,**kwargs):
     D = E*h**3/(12*(1-v**2))
-    u_z = P*r**2/(16*math.pi*D)
+    u_z = P*(OD/2)**2/(16*math.pi*D)
     return u_z
 
 #The diagram does not show a pinned support, rather a roller. Agree?
@@ -72,7 +72,7 @@ def A_Plate_Pressure_Pinned(E,v,P,OD,h,**kwargs):
     u_z = -(5+v)*P*r**4/(64*(1+v)*D)
     return u_z
 
-def A_Washer_Point_Clamped(E,v,P,OD,h,z,r,inD,**kwargs):
+def A_Washer_Point_Clamped(E,v,P,OD,h,inD,**kwargs):
     a = OD/2
     b = inD/2
     c = a/b
@@ -81,7 +81,7 @@ def A_Washer_Point_Clamped(E,v,P,OD,h,z,r,inD,**kwargs):
     u_z = k * P * a**2 / (E * t**3)
     return u_z
 
-def A_Washer_Point_Pinned(E,v,P,OD,h,z,r,inD,**kwargs):
+def A_Washer_Point_Pinned(E,v,P,OD,h,inD,**kwargs):
     a = OD/2
     b = inD/2
     c = a/b
@@ -90,7 +90,7 @@ def A_Washer_Point_Pinned(E,v,P,OD,h,z,r,inD,**kwargs):
     u_z = k * P * a**2 / E * t**3
     return u_z
 
-def A_Washer_Pressure_Clamped(E,v,P,OD,h,z,r,inD,**kwargs):
+def A_Washer_Pressure_Clamped(E,v,P,OD,h,inD,**kwargs):
     a = OD/2
     b = inD/2
     c = a/b
@@ -99,7 +99,7 @@ def A_Washer_Pressure_Clamped(E,v,P,OD,h,z,r,inD,**kwargs):
     u_z = k * P * a**4 / (E * t**3)
     return u_z
 
-def A_Washer_Pressure_Pinned(E,v,P,OD,h,z,r,inD,**kwargs):
+def A_Washer_Pressure_Pinned(E,v,P,OD,h,inD,**kwargs):
     a = OD/2
     b = inD/2
     c = a/b
