@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.2)  27 APR 2016 15:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.2)  27 APR 2016 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -508,38 +508,89 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 
 ] [6] [7]
 Chapter 6.
-<3D_fixed_point_NoHole.pdf, id=202, 250.9375pt x 180.675pt>
+<3D_pinned_point_NoHole.pdf, id=234, 250.9375pt x 190.7125pt>
+File: 3D_pinned_point_NoHole.pdf Graphic file (type pdf)
+
+<use 3D_pinned_point_NoHole.pdf>
+Package pdftex.def Info: 3D_pinned_point_NoHole.pdf used on input line 376.
+(pdftex.def)             Requested size: 200.0pt x 152.00856pt.
+
+<3D_fixed_point_NoHole.pdf, id=235, 250.9375pt x 180.675pt>
 File: 3D_fixed_point_NoHole.pdf Graphic file (type pdf)
 
 <use 3D_fixed_point_NoHole.pdf>
-Package pdftex.def Info: 3D_fixed_point_NoHole.pdf used on input line 377.
-(pdftex.def)             Requested size: 100.0pt x 72.0013pt.
+Package pdftex.def Info: 3D_fixed_point_NoHole.pdf used on input line 379.
+(pdftex.def)             Requested size: 200.0pt x 144.0081pt.
  [8
 
- <./3D_fixed_point_NoHole.pdf>] [9]
+ <./3D_pinned_point_NoHole.pdf>]
+<3D_pinned_pressure_NoHole.pdf, id=273, 250.9375pt x 190.7125pt>
+File: 3D_pinned_pressure_NoHole.pdf Graphic file (type pdf)
+
+<use 3D_pinned_pressure_NoHole.pdf>
+Package pdftex.def Info: 3D_pinned_pressure_NoHole.pdf used on input line 382.
+(pdftex.def)             Requested size: 200.0pt x 152.00856pt.
+
+<3D_fixed_pressure_NoHole.pdf, id=274, 250.9375pt x 180.675pt>
+File: 3D_fixed_pressure_NoHole.pdf Graphic file (type pdf)
+
+<use 3D_fixed_pressure_NoHole.pdf>
+Package pdftex.def Info: 3D_fixed_pressure_NoHole.pdf used on input line 385.
+(pdftex.def)             Requested size: 200.0pt x 144.0081pt.
+ [9 <./3D_fixed_point_NoHole.pdf> <./3D_pinned_pressure_NoHole.pdf> <./3D_fixed
+_pressure_NoHole.pdf>]
+<3D_pinned_point_Hole.pdf, id=379, 250.9375pt x 190.7125pt>
+File: 3D_pinned_point_Hole.pdf Graphic file (type pdf)
+
+<use 3D_pinned_point_Hole.pdf>
+Package pdftex.def Info: 3D_pinned_point_Hole.pdf used on input line 401.
+(pdftex.def)             Requested size: 200.0pt x 152.00856pt.
+
+<3D_fixed_point_Hole.pdf, id=380, 250.9375pt x 190.7125pt>
+File: 3D_fixed_point_Hole.pdf Graphic file (type pdf)
+
+<use 3D_fixed_point_Hole.pdf>
+Package pdftex.def Info: 3D_fixed_point_Hole.pdf used on input line 406.
+(pdftex.def)             Requested size: 200.0pt x 152.00856pt.
+ [10 <./3D_pinned_point_Hole.pdf>]
+<3D_pinned_pressure_Hole.pdf, id=418, 250.9375pt x 190.7125pt>
+File: 3D_pinned_pressure_Hole.pdf Graphic file (type pdf)
+
+<use 3D_pinned_pressure_Hole.pdf>
+Package pdftex.def Info: 3D_pinned_pressure_Hole.pdf used on input line 412.
+(pdftex.def)             Requested size: 200.0pt x 152.00856pt.
+
+<3D_fixed_pressure_Hole.pdf, id=419, 250.9375pt x 190.7125pt>
+File: 3D_fixed_pressure_Hole.pdf Graphic file (type pdf)
+
+<use 3D_fixed_pressure_Hole.pdf>
+Package pdftex.def Info: 3D_fixed_pressure_Hole.pdf used on input line 418.
+(pdftex.def)             Requested size: 200.0pt x 152.00856pt.
+ [11 <./3D_fixed_point_Hole.pdf> <./3D_pinned_pressure_Hole.pdf> <./3D_fixed_pr
+essure_Hole.pdf>]
 Chapter 7.
-[10
+[12
 
 ]
 Chapter 8.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 422.
-[11
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+[13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 422.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
  (./Final Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 422.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 422.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `"Final Report".out' has not changed.
-(rerunfilecheck)             Checksum: 9649B4EDEA8FD4E585D3EB37BC61ADA9;774.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 422.
+(rerunfilecheck)             Checksum: A365B031D3D6B2E500A92A8351BF9CB9;1686.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 432.
  ) 
 Here is how much of TeX's memory you used:
- 9347 strings out of 494522
- 135730 string characters out of 6167206
- 415672 words of memory out of 5000000
- 12373 multiletter control sequences out of 15000+600000
- 14558 words of font info for 55 fonts, out of 8000000 for 9000
+ 9401 strings out of 494522
+ 137079 string characters out of 6167206
+ 415679 words of memory out of 5000000
+ 12410 multiletter control sequences out of 15000+600000
+ 14865 words of font info for 56 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  31i,11n,42p,377b,1892s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{https://github.com/tjfulle/pyfem2/commit/bea5af7b
@@ -561,10 +612,10 @@ s/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014basic/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014basic/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "Final Report.pdf" (12 pages, 942039 bytes).
+Output written on "Final Report.pdf" (14 pages, 6227296 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
- 122 named destinations out of 1000 (max. 500000)
- 110 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 607 PDF objects out of 1000 (max. 8388607)
+ 357 compressed objects within 4 object streams
+ 132 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

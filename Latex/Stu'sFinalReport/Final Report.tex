@@ -372,44 +372,54 @@ For solid plates and washers, the constant $D$ is defined as:
 \[D = \frac{Et^3}{12(1- \nu ^2)}\]
 
 \section{Solid Plates}
-Pinned Point No Hole
-
-\includegraphics[width=100pt]{3D_fixed_point_NoHole.pdf}
-
+\subsection{Simply Supported Circular Plate with a Point Load in the Center}
+\includegraphics[width=200pt]{3D_pinned_point_NoHole.pdf}
 \[y_{max} = \frac{-p R^2}{16 \pi D} \frac{3 + \nu}{1 + \nu}\]
-Fixed Point No Hole
+\subsection{Fixed Edge Circular Plate with a Point Load in the Center}
+\includegraphics[width=200pt]{3D_fixed_point_NoHole.pdf}
 \[y_{max} = \frac{-p R^2}{16 \pi D}\]
-Pinned Distributed No Hole
+\subsection{Simply Supported Circular Plate with a Distributed Load}
+\includegraphics[width=200pt]{3D_pinned_pressure_NoHole.pdf}
 \[y_{max} = \frac{-q R^4 (5+ \nu)}{64D(1+\nu)}\]
-Fixed Distributed No Hole
+\subsection{Fixed Edge Circular Plate with a Distributed Load}
+\includegraphics[width=200pt]{3D_fixed_pressure_NoHole.pdf}
 \[y_{max} = \frac{-q rR^4}{64D}\]
 
 \section{Plate With a Hole (Washers)}
-Pinned Point Hole
-\[y_{max}=\frac{-p R^3}{D}\left(\frac{C_1 L_9}{C_7} - L_3\right)\]
-\[C_1 = \frac{1+\nu}{2}\frac{r}{R} \ln \frac{R}{r}+\frac{1-\nu}{4} \left( \frac{R}{r} - \frac{r}{R}\right)\]
-\[C_7 = \frac{1}{2} (1-\nu^2)\left( \frac{R}{r} - \frac{r}{R}\right)\]
-\[L_3 = \frac{r}{4R}\left( \left(\left( \frac{r}{R} \right) ^2 +1 \right) \ln \frac{R}{r} + \left( \frac{r}{R}\right)^2 -1 \right)\]
-\[L_9 = \frac{r}{R}\left( \frac{1+\nu}{2} \ln \frac{R}{r}    + \frac{1-\nu}{4}  \left( 1 - \left( \frac{r}{R} \right) ^2  \right) \right)\]
-Fixed Point Hole
-\[y_{max}=\frac{-p R^3}{D}\left(\frac{C_1 L_6}{C_4} - L_3\right)\]
+The following values are used repetitively through the $y_{max}$ equations:
 \[C_1 = \frac{1+\nu}{2}\frac{r}{R} \ln \frac{R}{r}+\frac{1-\nu}{4} \left( \frac{R}{r} - \frac{r}{R}\right)\]
 \[C_4 = \frac{1}{2} \left( (1+\nu)\frac{r}{R} + (1-\nu) \frac{R}{r} \right)\]
+\[C_7 = \frac{1}{2} (1-\nu^2)\left( \frac{R}{r} - \frac{r}{R}\right)\]
 \[L_3 = \frac{r}{4R}\left( \left(\left( \frac{r}{R} \right) ^2 +1 \right) \ln \frac{R}{r} + \left( \frac{r}{R}\right)^2 -1 \right)\]
 \[L_6 = \frac{r}{4R}\left( \left( \frac{r}{R} \right) ^2 -1+2 \ln \frac{R}{r}  \right)\]
-Pinned Distributed Hole
-\[y_{max}=\frac{-q R^4}{D}\left(\frac{C_1 L_{17}}{C_7} - L_{11}\right)\]
-\[C_1 = \frac{1+\nu}{2}\frac{r}{R} \ln \frac{R}{r}+\frac{1-\nu}{4} \left( \frac{R}{r} - \frac{r}{R}\right)\]
-\[C_7 = \frac{1}{2} (1-\nu^2)\left( \frac{R}{r} - \frac{r}{R}\right)\]
-\[L_{11} = \frac{1}{64} \left(1 + 4 \left( \frac{r}{R}\right)^2 -5\left( \frac{r}{R}\right)^4 -4\left( \frac{r}{R}\right)^2\left[ 2 + \left( \frac{r}{R}\right)^2 \right] \ln  \frac{r}{R} \right) \]
-\[L_{17} =\frac{1}{4} \left( 1 - \frac{1-\nu}{4} \left( 1 - \left( \frac{r}{R} \right) ^4 \right) - \left( \frac{r}{R} \right) ^2 \left( 1 + (1 + \nu ) \ln \frac{R}{r} \right) \right) \]
-Fixed Distributed Hole
-\[y_{max}=\frac{-q R^4}{D}\left(\frac{C_1 L_{14}}{C_4} - L_{11}\right)\]
-
-\[C_1 = \frac{1+\nu}{2}\frac{r}{R} \ln \frac{R}{r}+\frac{1-\nu}{4} \left( \frac{R}{r} - \frac{r}{R}\right)\]
-\[C_4 = \frac{1}{2} \left( (1+\nu)\frac{r}{R} + (1-\nu) \frac{R}{r} \right)\]
+\[L_9 = \frac{r}{R}\left( \frac{1+\nu}{2} \ln \frac{R}{r}    + \frac{1-\nu}{4}  \left( 1 - \left( \frac{r}{R} \right) ^2  \right) \right)\]
 \[L_{11} = \frac{1}{64} \left(1 + 4 \left( \frac{r}{R}\right)^2 -5\left( \frac{r}{R}\right)^4 -4\left( \frac{r}{R}\right)^2\left[ 2 + \left( \frac{r}{R}\right)^2 \right] \ln  \frac{r}{R} \right) \]
 \[L_{14} = \frac{1}{16} \left(1 - \left( \frac{r}{R}\right)^4 - 4\left( \frac{r}{R}\right)^2  \ln  \frac{R}{r}  \right)\]
+\[L_{17} =\frac{1}{4} \left( 1 - \frac{1-\nu}{4} \left( 1 - \left( \frac{r}{R} \right) ^4 \right) - \left( \frac{r}{R} \right) ^2 \left( 1 + (1 + \nu ) \ln \frac{R}{r} \right) \right) \]
+\subsection{Simply Supported Circular Washer with a Line Load on the Inner Circumference }
+
+\includegraphics[width=200pt]{3D_pinned_point_Hole.pdf}
+
+\[y_{max}=\frac{-p R^3}{D}\left(\frac{C_1 L_9}{C_7} - L_3\right)\]
+
+\subsection{Fixed Edge Circular Washer with a Line Load on the Inner Circumference }
+\includegraphics[width=200pt]{3D_fixed_point_Hole.pdf}
+
+\[y_{max}=\frac{-p R^3}{D}\left(\frac{C_1 L_6}{C_4} - L_3\right)\]
+
+
+\subsection{Simply Supported Circular Washer with a Distributed Load }
+\includegraphics[width=200pt]{3D_pinned_pressure_Hole.pdf}
+\[y_{max}=\frac{-q R^4}{D}\left(\frac{C_1 L_{17}}{C_7} - L_{11}\right)\]
+
+
+\subsection{Fixed Edge Circular Washer with a Distributed Load }
+
+\includegraphics[width=200pt]{3D_fixed_pressure_Hole.pdf}
+
+\[y_{max}=\frac{-q R^4}{D}\left(\frac{C_1 L_{14}}{C_4} - L_{11}\right)\]
+
+
 
 
 \chapter{Performance Evaluation}
