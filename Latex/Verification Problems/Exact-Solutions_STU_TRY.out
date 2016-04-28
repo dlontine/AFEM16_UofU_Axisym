@@ -1,0 +1,10 @@
+\BOOKMARK [0][-]{chapter.1}{Performance Evaluation}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Determining Differences Between Analytical and Numerical Solutions}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Convergence}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{CSDAX4F- Full Integration}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{CSDAX4R- Reduced Integration}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.3}{Comparing Convergence of Both Elements}{section.1.2}% 6
+\BOOKMARK [1][-]{section.1.3}{Convergence toward analytical solutions}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.4}{Functions utilized to determine convergence etc}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.5}{FEM code}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{Unit Testing}{}% 10
