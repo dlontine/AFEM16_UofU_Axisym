@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  22 APR 2016 16:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.12)  27 APR 2016 23:33
 entering extended mode
 **Exact*Solutions.tex
 
@@ -444,7 +444,62 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \dlf=\skip57
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
-s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux")
+s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux"
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_2' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_3' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:Conv_PlPoCl_1' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
@@ -459,8 +514,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
-
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count154
 \scratchdimen=\dimen153
@@ -529,186 +583,441 @@ s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.out")
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 81.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 81.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.85 \chapter
-             {Example 1: Uniaxial Stress on Bar} [1
-
-]
-Chapter 2.
-[2
-
-]
-Chapter 3.
-<./BD_3.png, id=63, 710.655pt x 370.38374pt>
-File: ./BD_3.png Graphic file (type png)
- <use ./BD_3.png>
-Package pdftex.def Info: ./BD_3.png used on input line 96.
-(pdftex.def)             Requested size: 328.82707pt x 171.38457pt.
-
-<./BD_2.png, id=64, 264.23718pt x 198.7425pt>
-File: ./BD_2.png Graphic file (type png)
- <use ./BD_2.png>
-Package pdftex.def Info: ./BD_2.png used on input line 102.
-(pdftex.def)             Requested size: 328.82707pt x 247.3388pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./BD_1.png, id=65, 578.16pt x 287.57437pt>
-File: ./BD_1.png Graphic file (type png)
- <use ./BD_1.png>
-Package pdftex.def Info: ./BD_1.png used on input line 108.
-(pdftex.def)             Requested size: 328.82707pt x 163.55489pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<./BD_4.png, id=66, 441.90094pt x 369.63094pt>
-File: ./BD_4.png Graphic file (type png)
- <use ./BD_4.png>
-Package pdftex.def Info: ./BD_4.png used on input line 114.
-(pdftex.def)             Requested size: 328.82707pt x 275.06235pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.140 \chapter
-              {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
-/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
-m/Latex/Verification Problems/BD_3.png>] [4pdfTeX warning (ext4): destination w
-ith the same identifier (name{figure.3.2}) has been already used, duplicate ign
-ored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.140 \chapter
-              {Example 3: Thick/thin walled pressure vessel}pdfTeX warning (ext
-4): destination with the same identifier (name{figure.3.3}) has been already us
-ed, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.140 \chapter
-              {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
-/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
-m/Latex/Verification Problems/BD_2.png> <C:/Users/dlontine/Dropbox/(01) School/
-UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Verification 
-Problems/BD_1.png>] [5pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.3.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.140 \chapter
-              {Example 3: Thick/thin walled pressure vessel} <C:/Users/dlontine
-/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisy
-m/Latex/Verification Problems/BD_4.png>]
-Chapter 4.
-[6
-
-]
-Chapter 5.
-<./PV_1.png, id=95, 432.86719pt x 292.84406pt>
-File: ./PV_1.png Graphic file (type png)
- <use ./PV_1.png>
-Package pdftex.def Info: ./PV_1.png used on input line 154.
-(pdftex.def)             Requested size: 328.82707pt x 222.46996pt.
- [7
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.159 \chapter
-              {Belleville Washer} <C:/Users/dlontine/Dropbox/(01) School/UofU (
-Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Verification Proble
-ms/PV_1.png>]
-Chapter 6.
-<./Belleville.png, id=101, 420.06938pt x 191.9672pt>
-File: ./Belleville.png Graphic file (type png)
- <use ./Belleville.png>
-Package pdftex.def Info: ./Belleville.png used on input line 164.
-(pdftex.def)             Requested size: 328.82707pt x 150.26984pt.
-
-[8
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.170 \chapter
-              {Method of manufactured solutions} <C:/Users/dlontine/Dropbox/(01
-) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Axisym/Latex/Veri
-fication Problems/Belleville.png>]
-Chapter 7.
-[9
-
-]
-Chapter 8.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 175.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 199.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
- [10
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 199.
+LaTeX Font Info:    Try loading font information for U+msa on input line 202.
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 202.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 212.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 219.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 219.
+ [1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<./GoodImages/Conv_PlPoCl_2.png, id=71, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPoCl_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPoCl_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPoCl_2.png used on input line 285.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [2]
+<./GoodImages/Conv_PlPoPi_2.png, id=112, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPoPi_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPoPi_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPoPi_2.png used on input line 292.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_PlPrCl_2.png, id=113, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPrCl_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPrCl_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPrCl_2.png used on input line 299.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.303 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.303 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPoCl_2
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPoPi_2.
+png>] <./GoodImages/Conv_PlPrPi_2.png, id=122, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPrPi_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPrPi_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPrPi_2.png used on input line 306.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_WaPoCl_2.png, id=123, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPoCl_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPoCl_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPoCl_2.png used on input line 313.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.317 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.317 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPrCl_2
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPrPi_2.
+png>] <./GoodImages/Conv_WaPoPi_2.png, id=132, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPoPi_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPoPi_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPoPi_2.png used on input line 320.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_WaPrCl_2.png, id=133, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPrCl_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPrCl_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPrCl_2.png used on input line 327.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [5pdfTeX warning (ext4): destination with the same identifier (name{figure.1.5
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.331 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.331 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPoCl_2
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPoPi_2.
+png>] <./GoodImages/Conv_WaPrPi_2.png, id=142, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPrPi_2.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPrPi_2.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPrPi_2.png used on input line 334.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.1.7
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.340 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.1.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.340 \newpage
+               <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv 
+Finite Elements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_
+WaPrCl_2.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv F
+inite Elements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_W
+aPrPi_2.png>] <./GoodImages/Conv_PlPoCl_3.png, id=151, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPoCl_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPoCl_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPoCl_3.png used on input line 346.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_PlPoPi_3.png, id=152, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPoPi_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPoPi_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPoPi_3.png used on input line 353.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_PlPrCl_3.png, id=153, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPrCl_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPrCl_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPrCl_3.png used on input line 360.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [7pdfTeX warning (ext4): destination with the same identifier (name{figure.1.9
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.364 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.364 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPoCl_3
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPoPi_3.
+png>] <./GoodImages/Conv_PlPrPi_3.png, id=163, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPrPi_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPrPi_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPrPi_3.png used on input line 367.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_WaPoCl_3.png, id=164, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPoCl_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPoCl_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPoCl_3.png used on input line 374.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.378 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.378 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPrCl_3
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPrPi_3.
+png>] <./GoodImages/Conv_WaPoPi_3.png, id=173, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPoPi_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPoPi_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPoPi_3.png used on input line 381.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_WaPrCl_3.png, id=174, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPrCl_3.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPrCl_3.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPrCl_3.png used on input line 388.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.392 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.392 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPoCl_3
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPoPi_3.
+png>] <./GoodImages/Conv_PlPoCl_1.png, id=183, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPoCl_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPoCl_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPoCl_1.png used on input line 398.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_PlPoPi_1.png, id=184, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPoPi_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPoPi_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPoPi_1.png used on input line 405.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [10pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.409 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.409 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPrCl_3
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPoCl_1.
+png>] <./GoodImages/Conv_PlPrCl_1.png, id=193, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPrCl_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPrCl_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPrCl_1.png used on input line 412.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_PlPrPi_1.png, id=194, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_PlPrPi_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_PlPrPi_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_PlPrPi_1.png used on input line 419.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+17}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.423 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.423 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPoPi_1
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPrCl_1.
+png>] <./GoodImages/Conv_WaPoCl_1.png, id=203, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPoCl_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPoCl_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPoCl_1.png used on input line 426.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_WaPoPi_1.png, id=204, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPoPi_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPoPi_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPoPi_1.png used on input line 433.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.437 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.20}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.437 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_PlPrPi_1
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPoCl_1.
+png>] <./GoodImages/Conv_WaPrCl_1.png, id=213, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPrCl_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPrCl_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPrCl_1.png used on input line 440.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+
+<./GoodImages/Conv_WaPrPi_1.png, id=214, 433.62pt x 289.08pt>
+File: ./GoodImages/Conv_WaPrPi_1.png Graphic file (type png)
+
+<use ./GoodImages/Conv_WaPrPi_1.png>
+Package pdftex.def Info: ./GoodImages/Conv_WaPrPi_1.png used on input line 447.
+
+(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.451 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.22}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.451 
+       <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite E
+lements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPoPi_1
+.png> <C:/Users/dlontine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite El
+ements/AFEM16_UofU_Axisym/Latex/Verification Problems/GoodImages/Conv_WaPrCl_1.
+png>] [14pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.1.23}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.479  
+                           saveas3=None,saveas4=None,**kwargs): <C:/Users/dlont
+ine/Dropbox/(01) School/UofU (Graduate)/(03) Adv Finite Elements/AFEM16_UofU_Ax
+isym/Latex/Verification Problems/GoodImages/Conv_WaPrPi_1.png>] [15] [16]
+[17] [18] [19] [20] [21] [22]
+Chapter 2.
+[23
+
+] [24] [25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1161.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1161.
 
 ("C:\Users\dlontine\Dropbox\(01) School\UofU (Graduate)\(03) Adv Finite Element
 s\AFEM16_UofU_Axisym\Latex\Verification Problems\Exact Solutions.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1161.
+
 Package rerunfilecheck Info: File `Exact*Solutions.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1161.
  ) 
 Here is how much of TeX's memory you used:
- 9771 strings out of 493921
- 143100 string characters out of 3147273
- 242938 words of memory out of 3000000
- 12901 multiletter control sequences out of 15000+200000
- 12114 words of font info for 47 fonts, out of 3000000 for 9000
+ 11329 strings out of 493921
+ 165174 string characters out of 3147273
+ 540756 words of memory out of 3000000
+ 13674 multiletter control sequences out of 15000+200000
+ 11221 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 30i,7n,32p,924b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,6n,42p,924b,1896s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb>
-Output written on "Exact Solutions.pdf" (11 pages, 374600 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Exact Solutions.pdf" (26 pages, 1215540 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1157 PDF objects out of 1200 (max. 8388607)
+ 790 named destinations out of 1000 (max. 500000)
+ 196 words of extra memory for PDF output out of 10000 (max. 10000000)
 

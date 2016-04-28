@@ -172,9 +172,3 @@ def test_5():
     ####-----Error-----####
     err=(zFEM-zANA)/zANA*100.
     #assert np.allclose(zFEM,zANA,atol=2)
-
-test_1()
-test_2()
-test_3()
-test_4()
-test_5()
